@@ -4,6 +4,7 @@ import './App.css'
 import { ThemeProvider } from '@mui/material/styles'
 import generateTheme from 'theme/theme'
 import { useAppSelector } from 'redux/hooks'
+import Router from 'routes/Router'
 
 function App() {
   const appConfig = useAppSelector((state) => state.appReducer)
@@ -13,7 +14,7 @@ function App() {
   return (
     <div className='App'>
       <ThemeProvider theme={theme}>
-        {/* TODO adding the Router here  */}
+        <Router />
       </ThemeProvider>
     </div>
   )
