@@ -1,11 +1,12 @@
 import { RouteIdEnum } from 'config/enums/routes.enum'
+import Home from 'pages/Home'
 import RouteObject from 'types/interfaces/RouteObject'
 
 const RoutesConfig: RouteObject[] = [
   {
     path: RouteIdEnum.Root,
     children: [],
-    element: <div>Home</div>,
+    element: <Home />,
   },
   {
     path: RouteIdEnum.Login,
