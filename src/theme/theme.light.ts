@@ -6,15 +6,16 @@ const paletteLight: ThemeOptions = {
   palette: {
     mode: 'light',
     primary: {
-      main: '#AD2184',
-      dark: '#BC1089',
+      main: '#461959',
+      dark: '#36054a',
+      light: '#7ED7C1',
       contrastText: '#FFF',
     },
     secondary: {
-      main: '#AD2184',
-      light: '#f2b1df',
-      dark: '#f5f5f5',
-      contrastText: '#f5f5f5',
+      main: '#50C9BA',
+      light: '#9EE6CF',
+      dark: '#4BA2AC',
+      contrastText: '#461959',
     },
     error: {
       main: '#FFF',

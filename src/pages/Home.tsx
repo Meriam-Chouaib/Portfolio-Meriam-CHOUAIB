@@ -1,9 +1,10 @@
-import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { Box } from '@mui/material'
 
 function Home() {
   const { t } = useTranslation()
-  return <>{t('home.title')}</>
+
+  return <Box sx={{ backgroundColor: 'red' }}>{t('home.title')}</Box>
 }
 
 export default Home

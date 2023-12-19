@@ -1,0 +1,20 @@
+import { Box, styled } from '@mui/material'
+import { Link } from 'react-router-dom'
+
+export const LinkBox = styled(Box)({
+  backgroundColor: 'black',
+  color: 'white',
+  width: '100%',
+})
+export const LinkHeader = styled(Link)(
+  ({ theme }) =>
+    ({ isactive }: { isactive: boolean }) => ({
+      color: isactive
+        ? theme.palette.secondary.light
+        : theme.palette.secondary.dark,
+      textDecoration: 'none',
+      fontSize: '16px',
+      fontWeight: '600',
+      padding: '0px 10px',
+    })
+)
