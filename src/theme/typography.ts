@@ -1,5 +1,5 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography'
-import { GlobalFonts } from 'config/enums/constant/fonts.config'
+import { GlobalFonts } from 'config/constant/fonts.config'
 
 const typography: TypographyOptions = {
   fontFamily: GlobalFonts.FONT_PRIMARY,

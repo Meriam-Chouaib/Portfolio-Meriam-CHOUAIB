@@ -10,7 +10,6 @@ function App() {
   const appConfig = useAppSelector((state) => state.appReducer)
 
   const theme = useMemo(() => generateTheme(appConfig.theme), [appConfig.theme])
-  console.log('🚀 ~ file: App.tsx:13 ~ App ~ theme:', theme)
 
   return (
     <ThemeProvider theme={theme}>

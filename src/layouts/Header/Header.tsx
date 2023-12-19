@@ -33,7 +33,7 @@ function Header() {
   ]
   return (
     <BoxHeader>
-      <Container>
+      <Container sx={{ display: 'flex', alignItems: 'center' }}>
         <TemporaryDrawer />
         <BoxMenu>
           {items.map((item) => (
@@ -42,6 +42,7 @@ function Header() {
             </LinkHeader>
           ))}
         </BoxMenu>
+        {/* <ButtonTraduction /> */}
       </Container>
     </BoxHeader>
   )

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Drawer from '@mui/material/Drawer'
 import List from '@mui/material/List'
+import { Link } from 'react-router-dom'
 import Divider from '@mui/material/Divider'
 import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
@@ -11,6 +12,8 @@ import MailIcon from '@mui/icons-material/Mail'
 import MenuIcon from '@mui/icons-material/Menu'
 import { BoxDrawer } from 'layouts/Header/Header.style'
 import { ButtonDrawer } from 'layouts/Header/Drawer/Drawer.style'
+import { itemsDrawer } from 'layouts/Header/Headers.constant'
+import { useTranslation } from 'react-i18next'
 
 export default function TemporaryDrawer() {
   const [openDrawer, setOpenDrawer] = React.useState(false)
@@ -20,6 +23,7 @@ export default function TemporaryDrawer() {
     bottom: false,
     right: false,
   })
+  const { t } = useTranslation()
 
   const toggleDrawer =
     (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -43,28 +47,32 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} sx={{ color: 'black' }} />
-            </ListItemButton>
-          </ListItem>
+        {itemsDrawer.map((item, index) => (
+          <Link to={item.path}>
+            <ListItem key={item.txt} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                </ListItemIcon>
+                <ListItemText primary={t(item.txt)} sx={{ color: 'black' }} />
+              </ListItemButton>
+            </ListItem>
+          </Link>
         ))}
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} sx={{ color: 'black' }} />
-            </ListItemButton>
-          </ListItem>
+        {itemsDrawer.map((item, index) => (
+          <Link to={item.path}>
+            <ListItem key={item.txt} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                </ListItemIcon>
+                <ListItemText primary={t(item.txt)} sx={{ color: 'black' }} />
+              </ListItemButton>
+            </ListItem>
+          </Link>
         ))}
       </List>
     </BoxDrawer>
