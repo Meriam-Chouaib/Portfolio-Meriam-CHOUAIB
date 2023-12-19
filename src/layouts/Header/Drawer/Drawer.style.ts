@@ -6,7 +6,7 @@ export const ButtonDrawer = styled(Button)(({ theme }) => ({
   minWidth: '40px',
   backgroundColor: theme.palette.secondary.dark,
   [theme.breakpoints.down('md')]: {
-    display: 'block',
+    display: 'flex',
   },
   ':hover': {
     backgroundColor: theme.palette.secondary.light,
