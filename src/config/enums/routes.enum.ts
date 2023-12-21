@@ -2,6 +2,9 @@ export enum RouteIdEnum {
   Root = '/',
   Login = '/login',
   Home = '/home',
-  contact = '/contact',
-  about = '/about',
+  Contact = '/contact',
+  About = '/about',
+  NotFound = '/404',
+  Auth = 'auth',
+  ForgetPassword = '/forget',
 }
