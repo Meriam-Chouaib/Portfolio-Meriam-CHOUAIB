@@ -96,6 +96,7 @@ function CustomTextField({
             }}
             sx={{
               maxWidth,
+              boxShadow: error ? `0px 1px 11px #e89595` : '',
             }}
           />
           {unit && (
