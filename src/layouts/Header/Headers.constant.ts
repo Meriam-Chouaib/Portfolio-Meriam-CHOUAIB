@@ -10,11 +10,11 @@ export const itemsDrawer = [
     txt: 'header.home',
   },
   {
-    path: RouteIdEnum.about,
+    path: RouteIdEnum.About,
     txt: 'header.about',
   },
   {
-    path: RouteIdEnum.contact,
+    path: RouteIdEnum.Contact,
     txt: 'header.contact',
   },
 ]

@@ -21,14 +21,14 @@ function Header() {
       isActive: pathname.indexOf(RouteIdEnum.Home) !== -1,
     },
     {
-      path: RouteIdEnum.about,
+      path: RouteIdEnum.About,
       txt: 'header.about',
-      isActive: pathname.indexOf(RouteIdEnum.about) !== -1,
+      isActive: pathname.indexOf(RouteIdEnum.About) !== -1,
     },
     {
-      path: RouteIdEnum.contact,
+      path: RouteIdEnum.Contact,
       txt: 'header.contact',
-      isActive: pathname.indexOf(RouteIdEnum.contact) !== -1,
+      isActive: pathname.indexOf(RouteIdEnum.Contact) !== -1,
     },
   ]
   return (

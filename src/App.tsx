@@ -1,6 +1,5 @@
 import { useMemo } from 'react'
 
-import './App.css'
 import { ThemeProvider } from '@mui/material/styles'
 import generateTheme from 'theme/theme'
 import { useAppSelector } from 'redux/hooks'

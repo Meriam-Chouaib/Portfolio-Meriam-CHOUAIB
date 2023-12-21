@@ -1,12 +1,13 @@
 import { Stack, Typography } from '@mui/material'
 import CustomTooltip from 'components/Tooltips/CustomTooltip/CustomTooltip'
+import { GlobalFonts } from 'config/constant/fonts.config'
 import { ChangeEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import { InputTypes } from 'types/interfaces/Input.type'
-import { TextFieldStyle } from './CustomTextField.style'
-import { CustomTextFieldProps } from './CustomTextField.type'
+
 import { GlobalVariables } from 'config/constant/global.variables'
-import { GlobalFonts } from 'config/constant/fonts.config'
+import { CustomTextFieldProps } from 'components/CustomTextField/CustomTextField.type'
+import { TextFieldStyle } from 'components/CustomInputs/CustomTextField/CustomTextField.style'
 import Required from 'components/CustomTextField/CustomSpan/Required'
 
 function CustomTextField({
@@ -107,7 +108,7 @@ function CustomTextField({
           )}
         </Stack>
 
-        <Typography variant='body2' fontSize={'0.75rem'} color={'error'}>
+        <Typography variant='body2' fontSize={'0.75rem'} color={'red'}>
           {hideHelperText
             ? GlobalVariables.EmptyString
             : t(

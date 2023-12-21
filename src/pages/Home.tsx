@@ -5,14 +5,19 @@ import { ChangeEvent, useState } from 'react'
 
 function Home() {
   const { t } = useTranslation()
-  const [value, setValue] = useState('')
+  const [firstName, setFirstName] = useState('')
 
-  const handleInputChange = (value: ChangeEvent<HTMLInputElement>) => {
-    const eventValue = value.target.value // Get the value from the input
-    setValue(eventValue)
+  const handleInputChange = (value: string) => {
+    setFirstName(value)
   }
 
-  return <Box>{t('home.title')}</Box>
+  return (
+    <Box>
+      {t('home.title')}
+
+      {firstName}
+    </Box>
+  )
 }
 
 export default Home
