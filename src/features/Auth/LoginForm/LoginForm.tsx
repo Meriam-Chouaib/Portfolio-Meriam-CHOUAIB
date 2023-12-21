@@ -1,7 +1,7 @@
 import { Checkbox, FormControlLabel, Stack, Typography } from '@mui/material'
 import AuthCustomLoadingButton from 'components/CustomButtons/AuthCustomLoadingButton/AuthCustomLoadingButton'
 import GenericInput from 'components/CustomInputs/GenericInput/GenericInput'
-import { GlobalVariables, STORAGE_KEYS, RouterPaths } from 'config/constant'
+import { RouterPaths } from 'config/constant'
 import {
   BoxStyle,
   CheckboxRootStyle,
