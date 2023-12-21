@@ -46,18 +46,15 @@ function LoginForm() {
     mode: 'onChange',
     shouldFocusError: true,
   })
-  // const [login, { isLoading }] = useLoginMutation()
 
   const onSubmit: SubmitHandler<LoginFormData> = async (values) => {
-    // dispatch(clearForms())
     const loginData = {
       email: values.email,
       password: values.password,
     }
-    console.log('loginData', loginData)
 
     try {
-      navigate(RouterPaths.RootPaths.rootPath)
+      console.log('loginData', loginData)
     } catch (error) {
       showOrSetFieldError(
         error,
