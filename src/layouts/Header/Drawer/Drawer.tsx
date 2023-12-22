@@ -48,22 +48,7 @@ export default function TemporaryDrawer() {
     >
       <List>
         {itemsDrawer.map((item, index) => (
-          <Link to={item.path}>
-            <ListItem key={item.txt} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={t(item.txt)} sx={{ color: 'black' }} />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {itemsDrawer.map((item, index) => (
-          <Link to={item.path}>
+          <Link to={item.path} key={`item-header-${index}`}>
             <ListItem key={item.txt} disablePadding>
               <ListItemButton>
                 <ListItemIcon>

@@ -1,7 +1,7 @@
 import { Checkbox, FormControlLabel, Stack, Typography } from '@mui/material'
 import AuthCustomLoadingButton from 'components/CustomButtons/AuthCustomLoadingButton/AuthCustomLoadingButton'
 import GenericInput from 'components/CustomInputs/GenericInput/GenericInput'
-import { FAKE_TOKEN, RouterPaths, STORAGE_KEYS } from 'config/constant'
+import { RouterPaths } from 'config/constant'
 import {
   BoxStyle,
   CheckboxRootStyle,
@@ -10,67 +10,29 @@ import {
   RootStyle,
   TypographyStyle,
 } from 'features/Auth/LoginForm/LoginForm.style'
-import { LoginFormData } from 'features/Auth/LoginForm/LoginForm.type'
-import useErrorAlert from 'hooks/useErrorAlert'
-import useSuccessAlert from 'hooks/useSuccessAlert'
-import { useState } from 'react'
-import InfoIcon from 'assets/icons/info.svg?react'
 
-import { useForm, FormProvider, SubmitHandler } from 'react-hook-form'
+import { FormProvider } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
-import { useAppDispatch } from 'redux/hooks'
-import { persistData } from 'utils/helpers'
-import { getRememberMeFromLocalStorage } from 'utils/service/storage.service'
-import { getErrorMessage } from './LoginForm.helpers'
+
 import { loginFormConfig } from 'features/Auth/LoginForm/LoginForm.constants'
 import CustomTooltip from 'components/Tooltips/CustomTooltip/CustomTooltip'
-import { RouteIdEnum } from 'config/enums/routes.enum'
+import useLogin from 'features/Auth/LoginForm/useLogin'
+import { useNavigate } from 'react-router'
 
 function LoginForm() {
-  const methods = useForm()
   const { t } = useTranslation()
   const navigate = useNavigate()
-  const dispatch = useAppDispatch()
-  const { register, handleSubmit } = methods
-  const passwordFormMethods = useForm<LoginFormData>({
-    mode: 'onChange',
-    shouldFocusError: true,
-  })
-  const [stayConnected, setStayConnected] = useState<boolean>(
-    getRememberMeFromLocalStorage()
-  )
 
-  const { showOrSetFieldError } = useErrorAlert()
-  const { showSuccess } = useSuccessAlert()
-  const formMethods = useForm<LoginFormData>({
-    mode: 'onChange',
-    shouldFocusError: true,
-  })
+  const {
+    stayConnected,
+    handleStayConnectedChange,
+    handleSubmit,
+    formMethods,
+  } = useLogin()
 
-  const onSubmit: SubmitHandler<LoginFormData> = async (values) => {
-    const loginData = {
-      email: values.email,
-      password: values.password,
-    }
-
-    try {
-      persistData(STORAGE_KEYS.TOKEN, FAKE_TOKEN)
-      navigate(RouteIdEnum.Home)
-    } catch (error) {
-      showOrSetFieldError(
-        error,
-        (fieldName, errorMessage) =>
-          formMethods.setError(fieldName as 'password' | 'email', {
-            message: errorMessage,
-          }),
-        getErrorMessage
-      )
-    }
-  }
   return (
     <FormProvider {...formMethods}>
-      <RootStyle onSubmit={formMethods.handleSubmit(onSubmit)}>
+      <RootStyle onSubmit={handleSubmit}>
         <Stack spacing={2.375} justifyContent='center'>
           <GenericInput inputObject={loginFormConfig.email} />
           <GenericInput inputObject={loginFormConfig.password} />
@@ -98,7 +60,7 @@ function LoginForm() {
                   }
                   size='small'
                   defaultChecked={stayConnected}
-                  onChange={() => setStayConnected(!stayConnected)}
+                  onChange={handleStayConnectedChange}
                 />
               }
             />
