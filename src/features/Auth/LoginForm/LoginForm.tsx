@@ -14,7 +14,7 @@ import { LoginFormData } from 'features/Auth/LoginForm/LoginForm.type'
 import useErrorAlert from 'hooks/useErrorAlert'
 import useSuccessAlert from 'hooks/useSuccessAlert'
 import { useState } from 'react'
-import { ReactComponent as InfoIcon } from 'assets/icons/info.svg'
+import InfoIcon from 'assets/icons/info.svg?react'
 
 import { useForm, FormProvider, SubmitHandler } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
@@ -84,9 +84,7 @@ function LoginForm() {
                   <CustomTooltip
                     title={t('product.link_product_to_session_description')}
                   >
-                    <BoxStyle>
-                      <InfoIcon />
-                    </BoxStyle>
+                    <BoxStyle>{/* <InfoIcon /> */}</BoxStyle>
                   </CustomTooltip>
                 </Stack>
               }
