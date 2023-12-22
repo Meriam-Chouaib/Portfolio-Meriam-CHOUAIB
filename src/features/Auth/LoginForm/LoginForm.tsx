@@ -1,7 +1,7 @@
 import { Checkbox, FormControlLabel, Stack, Typography } from '@mui/material'
 import AuthCustomLoadingButton from 'components/CustomButtons/AuthCustomLoadingButton/AuthCustomLoadingButton'
 import GenericInput from 'components/CustomInputs/GenericInput/GenericInput'
-import { RouterPaths } from 'config/constant'
+import { FAKE_TOKEN, RouterPaths, STORAGE_KEYS } from 'config/constant'
 import {
   BoxStyle,
   CheckboxRootStyle,
@@ -25,6 +25,7 @@ import { getRememberMeFromLocalStorage } from 'utils/service/storage.service'
 import { getErrorMessage } from './LoginForm.helpers'
 import { loginFormConfig } from 'features/Auth/LoginForm/LoginForm.constants'
 import CustomTooltip from 'components/Tooltips/CustomTooltip/CustomTooltip'
+import { RouteIdEnum } from 'config/enums/routes.enum'
 
 function LoginForm() {
   const methods = useForm()
@@ -54,7 +55,8 @@ function LoginForm() {
     }
 
     try {
-      console.log('loginData', loginData)
+      persistData(STORAGE_KEYS.TOKEN, FAKE_TOKEN)
+      navigate(RouteIdEnum.Home)
     } catch (error) {
       showOrSetFieldError(
         error,

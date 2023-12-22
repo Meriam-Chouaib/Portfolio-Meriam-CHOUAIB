@@ -1,6 +1,7 @@
 export const header = {
-  signin: 'Inscrire',
+  signin: 'Connecter',
   home: 'Accueil',
   about: 'A propos',
   contact: 'Contact',
+  signup: 'Inscrire',
 }
