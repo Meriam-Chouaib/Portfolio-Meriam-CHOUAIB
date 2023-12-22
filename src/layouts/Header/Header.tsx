@@ -36,8 +36,12 @@ function Header() {
       <Container sx={{ display: 'flex', alignItems: 'center' }}>
         <TemporaryDrawer />
         <BoxMenu>
-          {items.map((item) => (
-            <LinkHeader to={item.path} isactive={item.isActive}>
+          {items.map((item, index) => (
+            <LinkHeader
+              to={item.path}
+              isactive={item.isActive}
+              key={`item-header-${index}`}
+            >
               {t(item.txt)}
             </LinkHeader>
           ))}
