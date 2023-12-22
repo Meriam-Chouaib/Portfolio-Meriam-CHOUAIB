@@ -1,4 +1,4 @@
-import { ReactComponent as InfoIcon } from 'assets/icons/info.svg'
+import InfoIcon from 'assets/icons/info.svg?react'
 import { styled } from '@mui/material'
 
 export const InfoIconStyle = styled(InfoIcon)(({ theme }) => ({
