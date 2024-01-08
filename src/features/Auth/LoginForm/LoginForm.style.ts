@@ -3,12 +3,11 @@ import { Box, Typography, styled } from '@mui/material'
 export const RootStyle = styled('form')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
-  width: '85%',
-  minWidth: '250px',
-  minHeight: '250px',
+  width: '75%',
+  minWidth: '200px',
+  minHeight: '200px',
   [theme.breakpoints.down('sm')]: {
     minWidth: '90%',
-    minHeight: '90%',
   },
 }))
 
