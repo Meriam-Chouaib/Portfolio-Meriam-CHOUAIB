@@ -16,6 +16,7 @@ export const BoxHeader = styled(Box)(({ theme }) => ({
 }))
 export const BoxDrawer = styled(Box)(({ theme }) => ({
   display: 'none',
+
   [theme.breakpoints.down('md')]: {
     display: 'block',
   },

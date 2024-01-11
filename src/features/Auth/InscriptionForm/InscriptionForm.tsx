@@ -14,8 +14,9 @@ function InscriptionForm() {
     setSubmitCount(submitCount + 1)
   }
   const disableContinueButtonHandler = (): boolean => {
-    return true
+    return false
   }
+
   return (
     <StepContent
       continueButton={true}
