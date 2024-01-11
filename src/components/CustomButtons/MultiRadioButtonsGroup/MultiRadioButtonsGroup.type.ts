@@ -3,7 +3,8 @@ import { OptionsConfig, SelectOption } from 'types/interfaces/Input.type'
 export type MultiRadioButtonsGroupProps = {
   label: string
   placeholder?: string
-  options: SelectOption[]
+  options?: SelectOption[]
+
   value: Array<string | number>
   error?: FieldError
   tooltipText?: string

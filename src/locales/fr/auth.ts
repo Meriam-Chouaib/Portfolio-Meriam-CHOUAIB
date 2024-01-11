@@ -10,4 +10,5 @@ export const auth = {
   email_too_short: 'Email est trés petit!',
   email_required: 'Email est obligatoire',
   email_invalid: 'Email est invalid!',
+  signup: `Vous n'avez pas encore de compte?`,
 }

@@ -1,4 +1,10 @@
-import { FieldError } from 'react-hook-form'
+import { SxProps } from '@mui/material'
+import {
+  ControllerFieldState,
+  ControllerRenderProps,
+  FieldError,
+  FieldValues,
+} from 'react-hook-form'
 import { FormatInputs, ValueOptions } from 'types/interfaces/Input.type'
 
 export interface CustomTextFieldProps {
@@ -25,4 +31,7 @@ export interface CustomTextFieldProps {
   maxWidth?: string | number
   unit?: string
   onChange: (value: any) => void
+  field: ControllerRenderProps<FieldValues, string>
+  fieldState: ControllerFieldState
+  style?: SxProps
 }

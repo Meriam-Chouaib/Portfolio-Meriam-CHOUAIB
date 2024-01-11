@@ -92,59 +92,64 @@ export function MultiRadioButtonsGroup({
 
         {!isLoading && (
           <Grid container rowSpacing={optionsConfig?.itemWidth ? 2.125 : 1}>
-            {options.map((option, i) => (
-              <Grid
-                key={`${option.label}${i}`}
-                item
-                xs={optionsConfig?.itemWidth.xs ?? 'auto'}
-                md={optionsConfig?.itemWidth.md ?? 'auto'}
-                lg={optionsConfig?.itemWidth.lg ?? 'auto'}
-              >
-                <FormControlLabel
-                  value={option.value}
-                  disabled={disabled}
-                  control={
-                    <Radio
-                      size='small'
-                      icon={<RadioBoxStyle />}
-                      checkedIcon={
-                        <CheckedRadioBoxStyle>
-                          <CheckedRadioStyle />
-                        </CheckedRadioBoxStyle>
-                      }
-                      checked={stringsValue.includes(option.value.toString())}
-                      onClick={() => handleChange(option.value.toString())}
-                      sx={{ padding: 0, margin: 1, marginLeft: 0 }}
-                    />
-                  }
-                  label={
-                    <Stack direction={'row'} spacing={1} alignItems={'center'}>
-                      {!isUndefined(option.image) && (
-                        <BoxIconStyle
-                          sx={{
-                            cursor: !disabled ? 'pointer' : 'unset',
-                          }}
-                        >
-                          <CustomImage
-                            variant={ImageVariantsEnum.ICON}
-                            src={option.image}
-                            alt={t(option.label)}
-                            width={30}
-                            height={'auto'}
-                            clickable={!disabled}
-                            imgSx={{
-                              maxHeight: 30,
+            {options &&
+              options.map((option, i) => (
+                <Grid
+                  key={`${option.label}${i}`}
+                  item
+                  xs={optionsConfig?.itemWidth.xs ?? 'auto'}
+                  md={optionsConfig?.itemWidth.md ?? 'auto'}
+                  lg={optionsConfig?.itemWidth.lg ?? 'auto'}
+                >
+                  <FormControlLabel
+                    value={option.value}
+                    disabled={disabled}
+                    control={
+                      <Radio
+                        size='small'
+                        icon={<RadioBoxStyle />}
+                        checkedIcon={
+                          <CheckedRadioBoxStyle>
+                            <CheckedRadioStyle />
+                          </CheckedRadioBoxStyle>
+                        }
+                        checked={stringsValue.includes(option.value.toString())}
+                        onClick={() => handleChange(option.value.toString())}
+                        sx={{ padding: 0, margin: 1, marginLeft: 0 }}
+                      />
+                    }
+                    label={
+                      <Stack
+                        direction={'row'}
+                        spacing={1}
+                        alignItems={'center'}
+                      >
+                        {!isUndefined(option.image) && (
+                          <BoxIconStyle
+                            sx={{
+                              cursor: !disabled ? 'pointer' : 'unset',
                             }}
-                          />
-                        </BoxIconStyle>
-                      )}
-                      <Typography>{t(option.label)}</Typography>
-                    </Stack>
-                  }
-                  sx={{ marginLeft: 0 }}
-                />
-              </Grid>
-            ))}
+                          >
+                            <CustomImage
+                              variant={ImageVariantsEnum.ICON}
+                              src={option.image}
+                              alt={t(option.label)}
+                              width={30}
+                              height={'auto'}
+                              clickable={!disabled}
+                              imgSx={{
+                                maxHeight: 30,
+                              }}
+                            />
+                          </BoxIconStyle>
+                        )}
+                        <Typography>{t(option.label)}</Typography>
+                      </Stack>
+                    }
+                    sx={{ marginLeft: 0 }}
+                  />
+                </Grid>
+              ))}
           </Grid>
         )}
       </Stack>
