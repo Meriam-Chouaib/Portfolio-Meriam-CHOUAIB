@@ -1,124 +1,60 @@
-import { Stack, Typography } from '@mui/material'
-import CustomTooltip from 'components/Tooltips/CustomTooltip/CustomTooltip'
-import { GlobalFonts } from 'config/constant/fonts.config'
-import { ChangeEvent } from 'react'
+import { GlobalVariables } from 'config/constant'
+import {
+  ControllerFieldState,
+  ControllerRenderProps,
+  FieldValues,
+} from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-import { InputTypes } from 'types/interfaces/Input.type'
+import { ValueOptions } from 'types/interfaces/FormTypes/InputObject'
 
-import { GlobalVariables } from 'config/constant/global.variables'
+import { SxProps } from '@mui/material'
 import { CustomTextFieldProps } from 'components/CustomTextField/CustomTextField.type'
+import DisabledInput from 'components/Inputs/DisabledInput/DisabledInput'
 import { TextFieldStyle } from 'components/CustomInputs/CustomTextField/CustomTextField.style'
-import Required from 'components/CustomTextField/CustomSpan/Required'
 
 function CustomTextField({
-  name,
   label,
   inputType,
-  value,
-  error,
+  field,
+  fieldState,
   required,
-  isRequired,
   valueOptions,
-  placeholder,
-  size,
-  textAlign,
   disabled,
-  hideHelperText,
-  hideIcon,
-  formatInputs,
-  customHeight,
-  autoComplete,
-  helperMessage,
-  translationConfig,
-  maxWidth,
-  unit,
-  tooltipText,
-  onChange,
+  placeholder,
+  style,
 }: CustomTextFieldProps) {
   const { t } = useTranslation()
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const eventValue = event.target.value.replace(
-      GlobalVariables.Inputs.number.regex,
-      ''
+  if (disabled) {
+    return (
+      <DisabledInput
+        label={label}
+        value={field.value}
+        required={required}
+        isValid={!fieldState.error}
+      />
     )
-
-    onChange(eventValue)
   }
 
   return (
-    <Stack spacing={1.5} width='100%'>
-      {label && (
-        <Stack direction={'row'} spacing={0.66} alignItems={'center'}>
-          <Typography variant='h4'>
-            {t(label)}
-            {isRequired && <Required />}
-          </Typography>
-          {tooltipText && <CustomTooltip title={tooltipText} />}
-          {hideIcon && (
-            <CustomTooltip
-              title={t(
-                helperMessage ?? 'product.link_product_to_session_description',
-                translationConfig
-              )}
-            />
-          )}
-        </Stack>
-      )}
-      <Stack>
-        <Stack direction='row' spacing={1} alignItems={'center'}>
-          <TextFieldStyle
-            name={name}
-            type={InputTypes.TEXT}
-            value={value}
-            disabled={disabled}
-            autoComplete={autoComplete ? 'on' : undefined}
-            onChange={
-              inputType === InputTypes.NUMBER ? handleInputChange : onChange
-            }
-            error={!!error}
-            fullWidth
-            required={required}
-            placeholder={placeholder && t(placeholder, translationConfig)}
-            size={size}
-            InputLabelProps={{
-              shrink: true,
-            }}
-            inputProps={{
-              maxLength: valueOptions?.maxLength,
-              max: valueOptions?.max,
-              sx: {
-                textAlign,
-                height: customHeight ?? 'unset',
-                paddingInline: textAlign === 'center' ? '0' : '',
-                color: 'black',
-              },
-            }}
-            sx={{
-              maxWidth,
-              boxShadow: error ? `0px 1px 11px #e89595` : '',
-            }}
-          />
-          {unit && (
-            <Typography
-              variant='body1'
-              fontFamily={GlobalFonts.FONT_PRIMARY_500}
-            >
-              {t(unit)}
-            </Typography>
-          )}
-        </Stack>
-
-        <Typography variant='body2' fontSize={'0.75rem'} color={'red'}>
-          {hideHelperText
-            ? GlobalVariables.EmptyString
-            : t(
-                error?.message ?? GlobalVariables.EmptyString,
-                translationConfig
-              )}
-        </Typography>
-      </Stack>
-    </Stack>
+    <TextFieldStyle
+      sx={{ ...style }}
+      InputLabelProps={{
+        shrink: true,
+      }}
+      inputProps={{
+        maxLength: valueOptions?.maxLength,
+      }}
+      label={t(label)}
+      type={inputType}
+      {...field}
+      value={field.value}
+      error={!!fieldState.error}
+      helperText={t(fieldState.error?.message || GlobalVariables.EmptyString)}
+      fullWidth
+      required={required}
+      placeholder={placeholder && t(placeholder)}
+    />
   )
 }
 

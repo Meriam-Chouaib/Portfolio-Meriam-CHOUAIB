@@ -8,7 +8,7 @@ interface HomeProps {
   onNextStep: (newStepsRecord: StepsRecord) => void
   onPreviousStep: () => void
 }
-function Home({ oldStepsRecord, onNextStep, onPreviousStep }: HomeProps) {
+function Home() {
   const { t } = useTranslation()
   const [firstName, setFirstName] = useState('')
 
@@ -17,7 +17,7 @@ function Home({ oldStepsRecord, onNextStep, onPreviousStep }: HomeProps) {
   }
 
   return (
-    <Box sx={{ backgroundColor: 'red' }}>
+    <Box>
       {t('home.title')}
 
       {firstName}

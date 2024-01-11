@@ -29,7 +29,7 @@ const paletteLight: ThemeOptions = {
       main: '#FFF',
     },
     text: {
-      primary: '#FFF',
+      primary: '#461959',
     },
   },
   typography,

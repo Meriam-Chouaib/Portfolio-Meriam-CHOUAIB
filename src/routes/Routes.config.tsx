@@ -3,6 +3,7 @@ import MainLayout from 'layouts/MainLayout'
 import Home from 'pages/Home'
 import LoginPage from 'pages/LoginPage'
 import SignupPage from 'pages/SignupPage/SignupPage'
+import { StepsRecord } from 'pages/SignupPage/SignupPage.type'
 import RouteObject from 'types/interfaces/RouteObject'
 
 const RoutesConfig: RouteObject[] = [

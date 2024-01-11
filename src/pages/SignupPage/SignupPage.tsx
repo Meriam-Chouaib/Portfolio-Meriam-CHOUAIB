@@ -1,10 +1,13 @@
 import { Box } from '@mui/material'
 import MainCard from 'components/Cards/MainCard/MainCard'
 import CustomStepper from 'components/CustomStepper/CustomStepper'
+import InfoUserForm from 'features/Auth/InscriptionForm/InfoUserForm/InfoUserForm'
+import InscriptionForm from 'features/Auth/InscriptionForm/InscriptionForm'
 import Home from 'pages/Home'
 import LoginPage from 'pages/LoginPage'
 import useSignup from 'pages/SignupPage/useSignup'
 import { FormProvider, useForm } from 'react-hook-form'
+import { formTypes } from 'types/interfaces/FormTypes/GenericForm'
 import { getErrorTitleAndMessage } from 'utils/service/error.service'
 
 function SignupPage() {
@@ -19,23 +22,11 @@ function SignupPage() {
     stepsRecord,
   } = useSignup(9)
   const STEPS = [
-    <Home
-      oldStepsRecord={stepsRecord}
-      onNextStep={onFormation}
-      onPreviousStep={onPrevious}
-    />,
+    <InscriptionForm />,
     <LoginPage />,
-    <Home
-      oldStepsRecord={stepsRecord}
-      onNextStep={onNext}
-      onPreviousStep={onPrevious}
-    />,
+    <Home />,
     <LoginPage />,
-    <Home
-      oldStepsRecord={stepsRecord}
-      onNextStep={onNext}
-      onPreviousStep={onPrevious}
-    />,
+    <Home />,
     <LoginPage />,
   ]
 
@@ -63,7 +54,6 @@ function SignupPage() {
             <>
               {STEPS[activeStep - 1]}
               <Box
-                sx={{ backgroundColor: 'green' }}
                 onClick={() => {
                   onNext()
                 }}
