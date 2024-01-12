@@ -17,7 +17,7 @@ const paletteDark: ThemeOptions = {
       contrastText: '#f5f5f5',
     },
     error: {
-      main: '#FFF',
+      main: '#461959',
     },
     text: {
       primary: '#FFF',

@@ -7,23 +7,39 @@ import { formTypes } from 'types/interfaces/FormTypes/GenericForm'
 import { InputTypes } from 'types/interfaces/FormTypes/InputObject'
 import { InputsForm as InputsFormType } from 'types/interfaces/FormTypes/InputsForm'
 
-function InfoUserForm({
-  oldStepsRecord,
-  onNextStep,
-  onPreviousStep,
+function InfoUserForms({
+  inputs,
+  checkDependency,
   onChange,
+  submitCount,
   onSubmit,
-  forms,
 }: InfoUserProps) {
+  console.log('🚀 ~ inputs:', inputs)
   const { t } = useTranslation()
+
   return (
     <FormsGroup title={t('signup.title')}>
-      {forms.map((form, index) => (
+      {inputs.map((question, index) => (
         <GenericForm
-          form={form}
-          onChange={(value: unknown) => onChange(index, value)}
+          form={question}
+          onChange={(value: unknown, arrayIndex?: number) => {
+            onChange(index, value, arrayIndex)
+          }}
+          isNotActive={
+            question.dependsOn &&
+            !checkDependency(question.dependsOn.id, question.dependsOn.value)
+          }
+          submitCount={submitCount}
+          alert={
+            checkDependency(
+              question.alert?.dependency?.id,
+              question.alert?.dependency?.value
+            )
+              ? question.alert?.content
+              : undefined
+          }
           onSubmit={(infos: Record<string, unknown>) => {
-            onSubmit({ isValid: !!infos.isValid, values: infos.values })
+            onSubmit({ isValid: !!infos.isValid, values: infos.values }, index)
           }}
         />
       ))}
@@ -31,4 +47,4 @@ function InfoUserForm({
   )
 }
 
-export default InfoUserForm
+export default InfoUserForms

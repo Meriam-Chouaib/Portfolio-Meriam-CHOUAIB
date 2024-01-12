@@ -1,21 +1,53 @@
 import StepContent from 'components/CustomStepper/StepContent/StepContent'
-import InfoUserForm from 'features/Auth/InscriptionForm/InfoUserForm/InfoUserForm'
+import InfoUserForms from 'features/Auth/InscriptionForm/InfoUserForm/InfoUserForm'
 import { INPUTS_INSCRIPTION_FORM } from 'features/Auth/InscriptionForm/InscriptionForm.constants'
 import { StepsRecord } from 'pages/SignupPage/SignupPage.type'
+import useSignup from 'pages/SignupPage/useSignup'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { formTypes } from 'types/interfaces/FormTypes/GenericForm'
-import { InputTypes } from 'types/interfaces/FormTypes/InputObject'
+import CardRequest from 'types/models/CardRequest/CardRequest'
 
-function InscriptionForm() {
+function InscriptionForm({
+  stepsRecord,
+  onNextStep,
+  cardRequest,
+}: {
+  stepsRecord: StepsRecord
+  onNextStep: (
+    newStepsRecord: StepsRecord,
+    newCardRequest?: CardRequest
+  ) => void
+  cardRequest?: CardRequest
+}) {
   const [submitCount, setSubmitCount] = useState(0)
   const { t } = useTranslation()
-  const onSubmit = () => {
-    setSubmitCount(submitCount + 1)
-  }
+  // const onSubmit = () => {
+  //   setSubmitCount(submitCount + 1)
+  //   next()
+  // }
   const disableContinueButtonHandler = (): boolean => {
-    return true
+    return false
   }
+  const {
+    activeStep,
+    isStepsCompleted,
+    onFormation,
+    onIdentity,
+    onNext,
+    onPrevious,
+    handleFormData,
+
+    onSubmit,
+    forms,
+    checkDependency,
+    formsValues,
+    onChange,
+    setValidForms,
+    validForms,
+  } = useSignup(9)
+  console.log('🚀 ~ forms:', forms)
+
   return (
     <StepContent
       continueButton={true}
@@ -23,35 +55,12 @@ function InscriptionForm() {
       disabledNextFn={disableContinueButtonHandler}
       isLoading={false}
     >
-      <InfoUserForm
-        forms={[
-          {
-            inputs: INPUTS_INSCRIPTION_FORM,
-            id: 1,
-            type: formTypes.INPUTS,
-            name: t('signup.name_form'),
-            order: 1,
-            text: t('signup.name_form'),
-            value: 'Sample Text',
-            isRequired: true,
-          },
-        ]}
-        oldStepsRecord={undefined}
-        onNextStep={function (newStepsRecord: StepsRecord): void {
-          throw new Error('Function not implemented.')
-        }}
-        onPreviousStep={function (): void {
-          throw new Error('Function not implemented.')
-        }}
-        onChange={function (index: number, value: unknown): void {
-          throw new Error('Function not implemented.')
-        }}
-        onSubmit={function (infos: {
-          isValid: boolean
-          values: unknown
-        }): void {
-          throw new Error('Function not implemented.')
-        }}
+      <InfoUserForms
+        inputs={forms}
+        onChange={onChange}
+        checkDependency={checkDependency}
+        submitCount={submitCount}
+        onSubmit={onSubmit}
       />
     </StepContent>
   )
