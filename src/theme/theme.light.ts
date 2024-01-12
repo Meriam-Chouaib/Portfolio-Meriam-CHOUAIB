@@ -9,7 +9,7 @@ const paletteLight: ThemeOptions = {
       main: '#461959',
       dark: '#36054a',
       light: '#7ED7C1',
-      contrastText: '#FFF',
+      contrastText: '#461959',
     },
     secondary: {
       main: '#50C9BA',

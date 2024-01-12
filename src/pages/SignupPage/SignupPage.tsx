@@ -6,11 +6,14 @@ import InscriptionForm from 'features/Auth/InscriptionForm/InscriptionForm'
 import Home from 'pages/Home'
 import LoginPage from 'pages/LoginPage'
 import useSignup from 'pages/SignupPage/useSignup'
+import { useState } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { formTypes } from 'types/interfaces/FormTypes/GenericForm'
 import { getErrorTitleAndMessage } from 'utils/service/error.service'
 
 function SignupPage() {
+  const [formData, setFormData] = useState({})
+
   const {
     activeStep,
     isStepsCompleted,
@@ -20,14 +23,29 @@ function SignupPage() {
     onPrevious,
     handleFormData,
     stepsRecord,
+    forms,
+    onSubmit,
+    cardRequest,
   } = useSignup(9)
   const STEPS = [
-    <InscriptionForm />,
-    <LoginPage />,
-    <Home />,
-    <LoginPage />,
-    <Home />,
-    <LoginPage />,
+    <InscriptionForm
+      key={1}
+      stepsRecord={stepsRecord}
+      onNextStep={onIdentity}
+      cardRequest={cardRequest}
+    />,
+    <InscriptionForm
+      key={1}
+      stepsRecord={stepsRecord}
+      onNextStep={onIdentity}
+      cardRequest={cardRequest}
+    />,
+    <InscriptionForm
+      key={1}
+      stepsRecord={stepsRecord}
+      onNextStep={onIdentity}
+      cardRequest={cardRequest}
+    />,
   ]
 
   const formMethods = useForm({
@@ -48,20 +66,7 @@ function SignupPage() {
         //TODO get teh error if exists
         // error={error && getErrorTitleAndMessage(error)}
         >
-          {isStepsCompleted ? (
-            <Box>Done!!</Box>
-          ) : (
-            <>
-              {STEPS[activeStep - 1]}
-              <Box
-                onClick={() => {
-                  onNext()
-                }}
-              >
-                next
-              </Box>
-            </>
-          )}
+          {isStepsCompleted ? <Box>Done!!</Box> : <>{STEPS[activeStep - 1]}</>}
         </MainCard>
       </FormProvider>
     </CustomStepper>
