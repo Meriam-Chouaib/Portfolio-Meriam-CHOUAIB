@@ -18,18 +18,18 @@ export const ACCESS_CARD_FOR_HIMSELF_CREDENTIALS_FORM = (
       validate: (value: unknown) => !!value,
     },
   },
-  // ,
-  // {
-  //   fieldName: SignupAttributes.IS_OVER_18,
-  //   inputType: InputTypes.DATE,
-  //   label: 'accessCard.isOver18',
-  //   defaultValue: accessCardRequest?.isOver18 || GlobalVariables.EmptyString,
-  //   config: {
-  //     required: 'common.required',
-  //     valueAsDate: true,
-  //     validate: (isOver18) => isOver18 || 'identification.isOver18', // this is the text of error if exists ('identification.isOver18')
-  //   },
-  // },
+
+  {
+    fieldName: SignupAttributes.IS_OVER_18,
+    inputType: InputTypes.DATE,
+    label: 'accessCard.isOver18',
+    defaultValue: accessCardRequest?.isOver18 || GlobalVariables.EmptyString,
+    config: {
+      required: 'common.required',
+      valueAsDate: true,
+      validate: (isOver18) => isOver18 || 'identification.isOver18', // this is the text of error if exists ('identification.isOver18')
+    },
+  },
 ]
 
 export const FORMATION_USER = (

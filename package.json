@@ -44,7 +44,7 @@
     "stylelint": "^14.15.0",
     "stylis": "^4.3.0",
     "stylis-plugin-rtl": "^2.1.1",
-    "swiper": "^8.4.5",
+    "swiper": "^11.0.5",
     "typescript": "^5.3.3",
     "vite": "^5.0.10",
     "vite-plugin-svgr": "^4.2.0",

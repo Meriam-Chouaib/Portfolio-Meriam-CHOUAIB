@@ -38,6 +38,7 @@ export default function useSignup(stepsLength: number) {
   ) => {
     setStepsRecord({ ...stepsRecord, ...newStepsRecord })
     setCardRequest({ ...cardRequest, ...newCardRequest })
+    setActiveStep(activeStep + 1)
 
     onNext()
   }
@@ -49,7 +50,11 @@ export default function useSignup(stepsLength: number) {
     setStepsRecord((prevData) => ({ ...prevData, ...data }))
   }
   const onSubmit = () => {
+    setActiveStep(activeStep + 1)
+    console.log('🚀 ~ useSignup ~ activeStep:', activeStep)
+
     setSubmitCount(submitCount + 1)
+    onNext()
   }
   return {
     activeStep,

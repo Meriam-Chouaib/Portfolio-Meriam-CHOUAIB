@@ -46,12 +46,11 @@ function InscriptionForm({
     setValidForms,
     validForms,
   } = useSignup(9)
-  console.log('🚀 ~ forms:', forms)
 
   return (
     <StepContent
       continueButton={true}
-      onNextStep={onSubmit}
+      onNextStep={() => onSubmit()}
       disabledNextFn={disableContinueButtonHandler}
       isLoading={false}
     >
@@ -60,7 +59,7 @@ function InscriptionForm({
         onChange={onChange}
         checkDependency={checkDependency}
         submitCount={submitCount}
-        onSubmit={onSubmit}
+        onSubmit={() => onNext()}
       />
     </StepContent>
   )

@@ -11,7 +11,7 @@ export interface CustomTextFieldProps {
   name?: string
   label: string
   inputType: string
-  value: unknown
+  value?: unknown
   error?: FieldError
   required?: boolean
   isRequired?: boolean
@@ -30,7 +30,7 @@ export interface CustomTextFieldProps {
   translationConfig?: Record<string, unknown>
   maxWidth?: string | number
   unit?: string
-  onChange: (value: any) => void
+  onChange?: (value: any) => void
   field: ControllerRenderProps<FieldValues, string>
   fieldState: ControllerFieldState
   style?: SxProps

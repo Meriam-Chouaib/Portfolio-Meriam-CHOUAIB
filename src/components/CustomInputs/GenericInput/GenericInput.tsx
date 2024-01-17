@@ -63,10 +63,6 @@ function GenericInput({
               disabled={isDisabled}
               placeholder={placeholder}
               style={styled}
-              value={undefined}
-              onChange={function (value: any): void {
-                throw new Error('Function not implemented.')
-              }}
             />
           )}
           name={fieldName}

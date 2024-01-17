@@ -1,13 +1,5 @@
 import { GlobalVariables } from 'config/constant'
-import {
-  ControllerFieldState,
-  ControllerRenderProps,
-  FieldValues,
-} from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-import { ValueOptions } from 'types/interfaces/FormTypes/InputObject'
-
-import { SxProps } from '@mui/material'
 import { CustomTextFieldProps } from 'components/CustomTextField/CustomTextField.type'
 import DisabledInput from 'components/Inputs/DisabledInput/DisabledInput'
 import { TextFieldStyle } from 'components/CustomInputs/CustomTextField/CustomTextField.style'
