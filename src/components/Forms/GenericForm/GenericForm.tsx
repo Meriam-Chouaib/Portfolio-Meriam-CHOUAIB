@@ -1,7 +1,9 @@
 import { GenericFormProps } from 'components/Forms/GenericForm/GenericForm.type'
 import InputsForm from 'components/Forms/GenericForm/InputsForm/InputsForm'
+import InterrogativeQuestion from 'components/Forms/InterrogativeQuestion/InterrogativeQuestion'
 import { formTypes } from 'types/interfaces/FormTypes/GenericForm'
 import { InputsForm as InputsFormType } from 'types/interfaces/FormTypes/InputsForm'
+import { InterrogativeForm } from 'types/interfaces/FormTypes/InterrogativeForm'
 
 function GenericForm({
   form,
@@ -21,6 +23,15 @@ function GenericForm({
 }: Readonly<GenericFormProps>) {
   if (isNotActive) return null
   switch (form.type) {
+    case formTypes.INTERROGATIVE: {
+      return (
+        <InterrogativeQuestion
+          onSelect={(value: string) => onChange(value)}
+          {...(form as InterrogativeForm)}
+          alert={alert}
+        />
+      )
+    }
     case formTypes.INPUTS: {
       const inputsForm = form as InputsFormType
       return (

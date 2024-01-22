@@ -20,7 +20,7 @@ const paletteDark: ThemeOptions = {
       main: '#461959',
     },
     text: {
-      primary: '#FFF',
+      primary: '#0e7cb4',
     },
   },
   typography,

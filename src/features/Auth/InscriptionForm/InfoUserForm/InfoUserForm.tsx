@@ -1,11 +1,7 @@
 import FormsGroup from 'components/Forms/FormsGroup/FormsGroup'
 import GenericForm from 'components/Forms/GenericForm/GenericForm'
 import { InfoUserProps } from 'features/Auth/InscriptionForm/InfoUserForm/InfoUserForm.type'
-import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { formTypes } from 'types/interfaces/FormTypes/GenericForm'
-import { InputTypes } from 'types/interfaces/FormTypes/InputObject'
-import { InputsForm as InputsFormType } from 'types/interfaces/FormTypes/InputsForm'
 
 function InfoUserForms({
   inputs,
@@ -20,6 +16,7 @@ function InfoUserForms({
     <FormsGroup title={t('signup.title')}>
       {inputs.map((question, index) => (
         <GenericForm
+          key={`form-${index}`}
           form={question}
           onChange={(value: unknown, arrayIndex?: number) => {
             onChange(index, value, arrayIndex)
@@ -38,7 +35,7 @@ function InfoUserForms({
               : undefined
           }
           onSubmit={(infos: Record<string, unknown>) => {
-            onSubmit
+            onSubmit({ isValid: !!infos.isValid, values: infos.values }, index)
           }}
         />
       ))}

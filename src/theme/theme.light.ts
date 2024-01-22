@@ -26,7 +26,10 @@ const paletteLight: ThemeOptions = {
       500: '#9e9e9e',
     },
     error: {
-      main: '#FFF',
+      main: '#e02f2f',
+    },
+    success: {
+      main: '#23810a',
     },
     text: {
       primary: '#461959',

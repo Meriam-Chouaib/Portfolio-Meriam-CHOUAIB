@@ -10,9 +10,9 @@ export const ACCESS_CARD_FOR_HIMSELF_CREDENTIALS_FORM = (
   {
     fieldName: SignupAttributes.COUNTRY,
     inputType: InputTypes.TEXT,
-    label: 'accessCard.country',
+    label: 'signup.street',
     defaultValue: accessCardRequest?.haveIdCard || GlobalVariables.EmptyString,
-    placeholder: 'Enter your country',
+    placeholder: 'signup.street_placeholder',
     config: {
       ...InputsConfig.Name.Config,
       validate: (value: unknown) => !!value,
@@ -20,14 +20,15 @@ export const ACCESS_CARD_FOR_HIMSELF_CREDENTIALS_FORM = (
   },
 
   {
-    fieldName: SignupAttributes.IS_OVER_18,
-    inputType: InputTypes.DATE,
-    label: 'accessCard.isOver18',
-    defaultValue: accessCardRequest?.isOver18 || GlobalVariables.EmptyString,
+    fieldName: SignupAttributes.POSTAL_CODE_ZIP,
+    inputType: InputTypes.TEXT,
+    label: 'signup.code_postal',
+    defaultValue: GlobalVariables.EmptyString,
+    placeholder: 'signup.code_postal_placeholder',
+
     config: {
-      required: 'common.required',
-      valueAsDate: true,
-      validate: (isOver18) => isOver18 || 'identification.isOver18', // this is the text of error if exists ('identification.isOver18')
+      ...InputsConfig.Name.Config,
+      validate: (value: unknown) => !!value,
     },
   },
 ]
@@ -36,11 +37,11 @@ export const FORMATION_USER = (
   accessCardRequest: StepsRecord
 ): InputObject[] => [
   {
-    fieldName: SignupAttributes.STREET_APARTMENT_NUMBER,
+    fieldName: SignupAttributes.EMAIL_ADDRESS,
     inputType: InputTypes.TEXT,
-    label: 'street',
+    label: 'signup.email_label',
     defaultValue: accessCardRequest?.haveIdCard || GlobalVariables.EmptyString,
-    placeholder: 'Enter your street',
+    placeholder: 'signup.email_placeholder',
     config: {
       ...InputsConfig.Name.Config,
       validate: (value: unknown) => !!value,

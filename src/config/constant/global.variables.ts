@@ -1,4 +1,7 @@
 export const GlobalVariables = {
+  BOOLEAN_TRUE: true,
+  BOOLEAN_FALSE: false,
+
   NoDataLength: 0,
   FirstIndex: 0,
   NoIndex: -1,
