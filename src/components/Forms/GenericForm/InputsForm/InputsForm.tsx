@@ -64,6 +64,7 @@ function InputsForm({
       onSubmit({ isValid: false, errors })
     }
   )
+
   return (
     <>
       {!withAccordion ? (

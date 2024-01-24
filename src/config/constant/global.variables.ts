@@ -99,7 +99,6 @@ export const GlobalVariables = {
       max: 30,
       minLength: 10,
       maxLength: 10,
-      // TODO: use regex for ASC phone numbers
       regex: /^[0-9]*$/,
     },
     number: {
@@ -146,9 +145,7 @@ export const GlobalVariables = {
     },
     Video: {
       Type: 'file',
-      // TODO: recheck
       MaxSize: 62914560,
-      // TODO: recheck
       MaxSizeInMb: 60,
       AcceptType: ['.mp4', '.avi'],
       DefaultAlt: 'video',
@@ -186,7 +183,6 @@ export const GlobalVariables = {
       Week: 'Week',
     },
     WorkHours: {
-      // TODO - Recheck with back
       Min: '00:00:00',
       Max: '23:00:00',
     },

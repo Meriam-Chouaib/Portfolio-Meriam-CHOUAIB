@@ -36,15 +36,6 @@ function CustomTextField({
 }: CustomTextFieldProps) {
   const { t } = useTranslation()
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const eventValue = event.target.value.replace(
-      GlobalVariables.Inputs.number.regex,
-      ''
-    )
-
-    onChange(eventValue)
-  }
-
   return (
     <Stack spacing={1.5} width='100%'>
       {label && (
@@ -68,13 +59,11 @@ function CustomTextField({
         <Stack direction='row' spacing={1} alignItems={'center'}>
           <TextFieldStyle
             name={name}
-            type={InputTypes.TEXT}
+            type={inputType}
             value={value}
             disabled={disabled}
             autoComplete={autoComplete ? 'on' : undefined}
-            onChange={
-              inputType === InputTypes.NUMBER ? handleInputChange : onChange
-            }
+            onChange={onChange}
             error={!!error}
             fullWidth
             required={required}

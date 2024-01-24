@@ -48,3 +48,17 @@ export const FORMATION_USER = (
     },
   },
 ]
+
+export const FILES_USER = (accessCardRequest: StepsRecord): InputObject[] => [
+  {
+    fieldName: SignupAttributes.CIN,
+    inputType: InputTypes.FILE,
+    label: 'signup.file',
+    defaultValue: [],
+
+    config: {
+      ...InputsConfig.Name.Config,
+      validate: (value: unknown) => !!value,
+    },
+  },
+]

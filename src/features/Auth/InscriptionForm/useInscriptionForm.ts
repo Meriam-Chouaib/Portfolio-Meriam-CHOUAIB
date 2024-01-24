@@ -19,7 +19,7 @@ export const useInscriptionForm = (
     onChange,
     checkDependency,
     setValidForms,
-  } = useFormGroup(INPUTS_INSCRIPTION_FORM(StepsRecord))
+  } = useFormGroup(INPUTS_INSCRIPTION_FORM(StepsRecord, cardRequest))
 
   const formMethods = useFormContext()
   const { formState } = formMethods

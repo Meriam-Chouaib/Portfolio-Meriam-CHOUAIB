@@ -44,6 +44,7 @@ export enum InputTypes {
   TEXT_AREA = 'textarea',
   PASSWORD = 'password',
   MULTI_RADIO = 'multi-radio',
+  FILE = 'file',
 }
 
 export type ValueOptions = {

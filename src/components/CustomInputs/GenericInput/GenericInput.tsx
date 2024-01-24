@@ -38,7 +38,6 @@ function GenericInput({
       ? required && config.required
       : config.required,
   }
-  const [textInputValue, setTextInputValue] = useState('')
 
   const isDisabled = disabledForm ?? disabled
 
@@ -63,8 +62,9 @@ function GenericInput({
               disabled={isDisabled}
               placeholder={placeholder}
               style={styled}
-              // value={textInputValue}
-              // onChange={(e) => setTextInputValue(e.target.value)}
+              onChange={(event) => {
+                field.onChange(event)
+              }}
             />
           )}
           name={fieldName}

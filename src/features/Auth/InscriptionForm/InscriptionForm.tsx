@@ -26,7 +26,9 @@ function InscriptionForm({
     onChange,
     checkDependency,
     onSubmit,
+    formsValues,
   } = useInscriptionForm(stepsRecord, onNextStep, cardRequest)
+  console.log('🚀 ~ formsValues:', formsValues)
 
   return (
     <StepContent onNextStep={handleSubmit} disabledNextFn={disableNextFn}>

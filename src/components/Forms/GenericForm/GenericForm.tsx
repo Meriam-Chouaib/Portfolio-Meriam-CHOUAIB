@@ -1,6 +1,8 @@
+import FilesForm from 'components/Forms/FilesForm/FilesForm'
 import { GenericFormProps } from 'components/Forms/GenericForm/GenericForm.type'
 import InputsForm from 'components/Forms/GenericForm/InputsForm/InputsForm'
 import InterrogativeQuestion from 'components/Forms/InterrogativeQuestion/InterrogativeQuestion'
+import { FilesForm as FilesFormType } from 'types/interfaces/FormTypes/FilesForm'
 import { formTypes } from 'types/interfaces/FormTypes/GenericForm'
 import { InputsForm as InputsFormType } from 'types/interfaces/FormTypes/InputsForm'
 import { InterrogativeForm } from 'types/interfaces/FormTypes/InterrogativeForm'
@@ -50,6 +52,25 @@ function GenericForm({
           dependedInputObject={inputsForm.dependedInputObject}
           formInformation={inputsForm.formInformation}
         />
+      )
+    }
+    case formTypes.FILES_UPLOAD: {
+      const filesForm = form as FilesFormType
+      return (
+        <>
+          {additionalFileDescription && additionalFileDescription}
+          <FilesForm
+            inputName={filesForm.name}
+            files={filesForm.value}
+            labels={filesForm.options}
+            message={filesForm.text}
+            onChange={onChange}
+            filesMaxSize={filesForm.config?.maxSize}
+            filesTypes={filesForm.config?.accept}
+            maxFilesCount={filesForm.maxFiles ?? 3}
+            hideFileDescription={filesForm.hideFilesDescriptions}
+          />
+        </>
       )
     }
   }

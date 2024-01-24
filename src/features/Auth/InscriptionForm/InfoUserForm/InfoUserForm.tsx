@@ -10,6 +10,7 @@ function InfoUserForms({
   submitCount,
   onSubmit,
 }: InfoUserProps) {
+  console.log('🚀 ~ inputs:', inputs)
   const { t } = useTranslation()
 
   return (
@@ -19,7 +20,9 @@ function InfoUserForms({
           key={`form-${index}`}
           form={question}
           onChange={(value: unknown, arrayIndex?: number) => {
-            onChange(index, value, arrayIndex)
+            onChange(index, value, index)
+            console.log('🚀 ~ index:', index)
+            console.log('value', value)
           }}
           isNotActive={
             question.dependsOn &&
