@@ -1,4 +1,3 @@
-import { MultiRadioButtonsGroup } from 'components/CustomButtons/MultiRadioButtonsGroup/MultiRadioButtonsGroup'
 import {
   Controller,
   ControllerFieldState,
@@ -9,7 +8,7 @@ import { isObjectExist } from 'utils/helpers/object.helpers'
 
 import CustomTextField from '../CustomTextField/CustomTextField'
 import { GenericInputProps } from 'components/CustomInputs/GenericInput/GenericInput.type'
-import { InputTypes } from 'types/interfaces/FormTypes/InputObject'
+import { useState } from 'react'
 
 function GenericInput({
   inputObject,
@@ -63,6 +62,9 @@ function GenericInput({
               disabled={isDisabled}
               placeholder={placeholder}
               style={styled}
+              onChange={(event) => {
+                field.onChange(event)
+              }}
             />
           )}
           name={fieldName}

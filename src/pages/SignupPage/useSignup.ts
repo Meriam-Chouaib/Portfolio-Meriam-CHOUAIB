@@ -1,24 +1,14 @@
-import { INPUTS_INSCRIPTION_FORM } from 'features/Auth/InscriptionForm/InscriptionForm.constants'
-import useFormGroup from 'hooks/useFormGroup'
 import { StepsRecord } from 'pages/SignupPage/SignupPage.type'
-import { useState } from 'react'
+import { SetStateAction, useState } from 'react'
 import CardRequest from 'types/models/CardRequest/CardRequest'
 
-export default function useSignup(stepsLength: number) {
+export default function useRequestNewCard(stepsLength: number) {
   const [activeStep, setActiveStep] = useState(1)
   const [isStepsCompleted, setIsStepsCompleted] = useState(false)
-  const [stepsRecord, setStepsRecord] = useState<StepsRecord>({})
   const [submitCount, setSubmitCount] = useState(0)
+  const [stepsRecord, setStepsRecord] = useState<StepsRecord>({})
   const [cardRequest, setCardRequest] = useState<CardRequest>()
 
-  const {
-    forms,
-    onChange,
-    checkDependency,
-    formsValues,
-    validForms,
-    setValidForms,
-  } = useFormGroup(INPUTS_INSCRIPTION_FORM(stepsRecord))
   const onNext = () => {
     if (activeStep < stepsLength) {
       setActiveStep(activeStep + 1)
@@ -49,7 +39,20 @@ export default function useSignup(stepsLength: number) {
   const handleFormData = (data: any) => {
     setStepsRecord((prevData) => ({ ...prevData, ...data }))
   }
-  const onSubmit = () => {
+  const onSubmit = (
+    infos: { isValid: boolean; values: unknown },
+    onChange: (
+      index: number,
+      value: unknown,
+      arrayIndex?: number | undefined
+    ) => void,
+    setValidForms: (value: SetStateAction<boolean>) => void
+  ) => {
+    if (infos.isValid) {
+      onChange(2, infos.values)
+    }
+    setValidForms(infos.isValid)
+
     setActiveStep(activeStep + 1)
     console.log('🚀 ~ useSignup ~ activeStep:', activeStep)
 
@@ -66,12 +69,7 @@ export default function useSignup(stepsLength: number) {
     onFormation,
     handleFormData,
     onSubmit,
-    forms,
-    onChange,
-    checkDependency,
-    formsValues,
-    validForms,
-    setValidForms,
+
     cardRequest,
     submitCount,
   }

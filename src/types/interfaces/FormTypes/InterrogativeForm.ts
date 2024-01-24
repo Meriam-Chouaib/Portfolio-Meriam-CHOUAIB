@@ -23,3 +23,8 @@ export enum InterrogativeType {
   NO = 'no',
   EMPTY = '',
 }
+export enum GenderType {
+  FEMALE = 'female',
+  MALE = 'male',
+  EMPTY = '',
+}

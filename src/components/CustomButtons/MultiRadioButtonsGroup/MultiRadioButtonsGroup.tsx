@@ -13,7 +13,6 @@ import CustomTooltip from 'components/Tooltips/CustomTooltip/CustomTooltip'
 import { ImageVariantsEnum } from 'config/enums/image.enum'
 import { isUndefined } from 'lodash'
 import { useTranslation } from 'react-i18next'
-import { generateArray } from 'utils/helpers/array.helpers'
 import {
   BoxIconStyle,
   CheckedRadioBoxStyle,
@@ -75,7 +74,9 @@ export function MultiRadioButtonsGroup({
 
         {isLoading && (
           <Grid container rowSpacing={optionsConfig?.itemWidth ? 2.125 : 1}>
-            {generateArray(6).map((id) => (
+            <Stack>Loading...</Stack>
+            {/* TODO fix this ! */}
+            {/* {generateArray(6).map((id: number) => (
               <Grid
                 key={id}
                 item
@@ -86,7 +87,7 @@ export function MultiRadioButtonsGroup({
               >
                 <Skeleton width={'60%'} height={40} />
               </Grid>
-            ))}
+            ))} */}
           </Grid>
         )}
 
