@@ -31,6 +31,7 @@ export const useInscriptionForm = (
 
   const handleSubmit = () => {
     setSubmitCount(submitCount + 1)
+
     onNextStep(StepsRecord)
   }
   const resetSubmit = () => {
