@@ -1,4 +1,5 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography'
+import { Shadows } from 'config/constant/colors.config'
 import { GlobalFonts } from 'config/constant/fonts.config'
 
 const typography: TypographyOptions = {
@@ -7,10 +8,12 @@ const typography: TypographyOptions = {
   fontWeightMedium: 600,
   fontWeightBold: 900,
   h1: {
-    fontWeight: 400,
-    fontFamily: GlobalFonts.FONT_PRIMARY,
-    fontSize: '1.75rem',
-    lineHeight: '2rem',
+    fontWeight: 700,
+    fontFamily: GlobalFonts.FONT_DANCING_SCRIPT,
+
+    lineHeight: '5rem',
+    fontSize: '4.5rem',
+    textShadow: Shadows.dark,
   },
   h2: {
     fontWeight: 500,

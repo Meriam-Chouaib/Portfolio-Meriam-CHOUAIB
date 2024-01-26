@@ -11,6 +11,7 @@ export const GlobalFonts = {
 
   FONT_PRIMARY_ITALIC: 'PoppinsItalic',
   FONT_PRIMARY_ITALIC_500: 'PoppinsItalic500',
+  FONT_DANCING_SCRIPT: 'Dancing Script ',
 
   FONT_SECONDARY: 'IBMPlex',
 }

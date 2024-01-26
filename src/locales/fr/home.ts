@@ -1,5 +1,7 @@
 export const home = {
   title: 'Page daccueil',
+  name: 'Library Books',
+
   swiper_home_desc_1: 'Lire des livres élargit vos connaissances',
   swiper_home_desc_2: 'La lecture améliore votre vocabulaire',
   swiper_home_desc_3: 'La lecture aide à améliorer la concentration',
