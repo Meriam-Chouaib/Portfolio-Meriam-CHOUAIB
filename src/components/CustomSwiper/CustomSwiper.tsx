@@ -1,22 +1,16 @@
-import CustomImage from 'components/Common/Image/Image'
-import { SwiperSlideStyled } from 'components/CustomSwiper/CustomSwiper.style'
+import { Swiper } from 'swiper/react'
 
-function CustomSwiperSlide({
-  img,
-  height,
-  key,
-  width,
-}: {
-  img?: string
-  height?: string
-  key?: string
-  width?: string
-}) {
+import { EffectCards } from 'swiper/modules'
+import CustomSwiperSlide from 'components/CustomSwiperSlide/CustomSwiperSlide'
+import { ISwiperItem } from 'components/CustomSwiper/Custom!swiper.type'
+function CustomSwiper({ SWIPER_ITEMS }: { SWIPER_ITEMS: ISwiperItem[] }) {
   return (
-    <SwiperSlideStyled>
-      <CustomImage src={img} height={height} width={width} key={key} />
-    </SwiperSlideStyled>
+    <Swiper effect={'cards'} grabCursor={true} modules={[EffectCards]}>
+      {SWIPER_ITEMS.map((swiper, index) => (
+        <CustomSwiperSlide img={swiper.img} index={index}></CustomSwiperSlide>
+      ))}
+    </Swiper>
   )
 }
 
-export default CustomSwiperSlide
+export default CustomSwiper
