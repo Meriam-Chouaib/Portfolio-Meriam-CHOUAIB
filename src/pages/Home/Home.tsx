@@ -9,6 +9,7 @@ import { EffectCards } from 'swiper/modules'
 import { Box, Typography } from '@mui/material'
 import { BoxStyled } from 'pages/Home/Home.style'
 import BoxCenter from 'components/Common/BoxCenter/BoxCenter'
+import CustomSwiper from 'pages/Home/CustomSwiper/CustomSwiper'
 interface HomeProps {
   oldStepsRecord: StepsRecord
   onNextStep: (newStepsRecord: StepsRecord) => void
@@ -20,28 +21,7 @@ function Home() {
   return (
     <BoxCenter>
       <BoxStyled margin={'2rem 0rem'}>
-        <Swiper
-          effect={'cards'}
-          grabCursor={true}
-          modules={[EffectCards]}
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          {SWIPER_ITEMS.map((swiper, index) => (
-            <SwiperSlide>
-              <CustomImage
-                src={swiper.img}
-                height={HEIGHT_SWIPER}
-                width={'50%'}
-                key={`swiper-library-${index}`}
-                sx={{ borderRadius: '20px' }}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <CustomSwiper />
         <Box>
           <Typography variant='h1'>{t('home.name')}</Typography>
         </Box>
