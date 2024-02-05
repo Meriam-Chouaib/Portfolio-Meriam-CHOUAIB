@@ -1,15 +1,12 @@
 import { useTranslation } from 'react-i18next'
-import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { StepsRecord } from 'pages/SignupPage/SignupPage.type'
-import CustomImage from 'components/Common/Image/Image'
 
-import { HEIGHT_SWIPER, SWIPER_ITEMS } from 'pages/Home/Home.constants'
-import { EffectCards } from 'swiper/modules'
 import { Box, Typography } from '@mui/material'
 import { BoxStyled } from 'pages/Home/Home.style'
 import BoxCenter from 'components/Common/BoxCenter/BoxCenter'
 import CustomSwiper from 'pages/Home/CustomSwiper/CustomSwiper'
+import PieActiveArc from 'components/Charts/ArcChart/ArcChart'
 interface HomeProps {
   oldStepsRecord: StepsRecord
   onNextStep: (newStepsRecord: StepsRecord) => void
