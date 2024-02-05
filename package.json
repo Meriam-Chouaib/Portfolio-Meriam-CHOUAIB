@@ -9,6 +9,7 @@
     "@mui/icons-material": "^5.10.15",
     "@mui/lab": "^5.0.0-alpha.127",
     "@mui/material": "^5.10.15",
+    "@mui/x-charts": "^6.19.3",
     "@reduxjs/toolkit": "^1.9.0",
     "@snowplow/browser-tracker": "^3.16.0",
     "@testing-library/jest-dom": "^5.16.5",

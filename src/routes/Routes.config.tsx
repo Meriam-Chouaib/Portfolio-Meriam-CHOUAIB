@@ -1,5 +1,6 @@
 import { RouteIdEnum } from 'config/enums/routes.enum'
 import MainLayout from 'layouts/MainLayout'
+import AboutPage from 'pages/AboutPage/AboutPage'
 import Home from 'pages/Home/Home'
 import LoginPage from 'pages/LoginPage'
 import SignupPage from 'pages/SignupPage/SignupPage'
@@ -23,6 +24,10 @@ const RoutesConfig: RouteObject[] = [
         path: RouteIdEnum.Signup,
 
         element: <SignupPage />,
+      },
+      {
+        path: RouteIdEnum.About,
+        element: <AboutPage />,
       },
     ],
     element: <MainLayout />,
