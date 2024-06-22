@@ -1,8 +1,9 @@
 import { GlobalVariables } from 'config/constant'
 import { StepsRecord } from 'pages/SignupPage/SignupPage.type'
-import { InputObject, InputTypes } from 'types/interfaces/FormTypes/InputObject'
+import { InputObject } from 'types/interfaces/FormTypes/InputObject'
 import { SignupAttributes } from 'types/models/AccessCard/SignupAttributes/SignupAttributes'
 import { InputsConfig } from 'config/constant/inputs.config'
+import { InputTypes } from 'types/interfaces/Input.type'
 
 export const ACCESS_CARD_FOR_HIMSELF_CREDENTIALS_FORM = (
   accessCardRequest: StepsRecord

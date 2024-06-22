@@ -42,18 +42,21 @@ export interface SelectOption {
 
 export enum InputTypes {
   TEXT = 'text',
-  TEXTAREA = 'textarea',
   NUMBER = 'number',
-  RADIO = 'radio',
-  MULTI_RADIO = 'multi-radio',
-  PASSWORD = 'password',
-  CHECKBOX = 'checkbox',
-  FILE = 'file',
-  PHONE_INPUT = 'phone-input',
-  DATE = 'date',
   SELECT = 'select',
-  WYSIWYG = 'wysiwyg',
-  NUMBER_FORMAT = 'numberFormat',
+  RADIO = 'radio',
+  CHECKBOX = 'checkbox',
+  CONFIRM_BOX = 'confirm_box',
+  DATE = 'date',
+  DATE_MONTH = 'date_month',
+  DATE_TIME = 'date_time',
+  BLOCK = 'block',
+  DISABLED = 'disabled',
+  DISABLED_DATE = 'disabled_date',
+  TEXT_AREA = 'textarea',
+  PASSWORD = 'password',
+  MULTI_RADIO = 'multi-radio',
+  FILE = 'file',
 }
 
 export enum InputSize {
