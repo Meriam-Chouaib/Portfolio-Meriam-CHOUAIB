@@ -57,7 +57,7 @@ export default function TemporaryDrawer() {
         <CustomImage src={Logo} height='9vh' width='auto' />
       </BoxCenter>
       <List>
-        {itemsDrawer.map((item, index) => (
+        {itemsDrawer().map((item, index) => (
           <LinkStyled to={item.path} key={`item-header-${index}`}>
             <ListItem
               key={item.txt}
