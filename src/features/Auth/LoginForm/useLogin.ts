@@ -3,10 +3,15 @@ import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { persistData } from 'utils/helpers'
 import { getRememberMeFromLocalStorage } from 'utils/service/storage.service'
-import { FAKE_TOKEN, STORAGE_KEYS } from 'config/constant'
+import { FAKE_TOKEN, GlobalVariables, STORAGE_KEYS } from 'config/constant'
 import { RouteIdEnum } from 'config/enums/routes.enum'
 
 const useLogin = () => {
+  console.log(
+    'getRememberMeFromLocalStorage()',
+    getRememberMeFromLocalStorage()
+  )
+  persistData(STORAGE_KEYS.REMEMBER_ME, GlobalVariables.BOOLEAN_FALSE)
   const [stayConnected, setStayConnected] = useState<boolean>(
     getRememberMeFromLocalStorage()
   )
