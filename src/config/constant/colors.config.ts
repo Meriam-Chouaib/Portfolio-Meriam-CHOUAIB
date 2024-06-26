@@ -3,7 +3,7 @@ export const ColorsConfig = {
     main: '#461959',
     dark: '#36054a',
     light: '#7ED7C1',
-    contrastText: '#461959',
+    contrastText: '#7b4393',
   },
   secondary: {
     main: '#50C9BA',

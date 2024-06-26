@@ -6,7 +6,7 @@ export const ButtonDrawer = styled(Button)(({ theme }) => ({
   display: 'none',
   padding: '2px 7px',
   minWidth: '40px',
-  backgroundColor: theme.palette.secondary.dark,
+  // backgroundColor: theme.palette.secondary.dark,
   [theme.breakpoints.down('md')]: {
     display: 'flex',
   },
@@ -23,4 +23,8 @@ export const ListItemTextStyled = styled(ListItemText)(({ theme }) => ({
     fontWeight: 600,
     fontSize: '16px',
   },
+}))
+export const IconDrawer = styled('img')(({ theme }) => ({
+  width: '30px',
+  height: '30px',
 }))

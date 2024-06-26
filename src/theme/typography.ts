@@ -17,8 +17,8 @@ const typography: TypographyOptions = {
   },
   h2: {
     fontWeight: 500,
-    fontFamily: GlobalFonts.FONT_PRIMARY_500,
-    fontSize: '1.563rem',
+    fontFamily: GlobalFonts.FONT_CURSIVE,
+    fontSize: '1.3rem',
     lineHeight: '2.188rem',
   },
   h3: {

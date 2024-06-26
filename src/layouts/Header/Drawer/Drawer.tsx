@@ -1,26 +1,22 @@
 import * as React from 'react'
 import Drawer from '@mui/material/Drawer'
 import List from '@mui/material/List'
-import { Link } from 'react-router-dom'
-import Divider from '@mui/material/Divider'
+
 import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
-import ListItemText from '@mui/material/ListItemText'
 import InboxIcon from '@mui/icons-material/MoveToInbox'
 import MailIcon from '@mui/icons-material/Mail'
-import MenuIcon from '@mui/icons-material/Menu'
 import { BoxDrawer } from 'layouts/Header/Header.style'
 import {
   ButtonDrawer,
+  IconDrawer,
   LinkStyled,
   ListItemTextStyled,
 } from 'layouts/Header/Drawer/Drawer.style'
 import { itemsDrawer } from 'layouts/Header/Headers.constant'
 import { useTranslation } from 'react-i18next'
-import CustomImage from 'components/Common/Image/Image'
-import Logo from 'assets/images/logo.png'
-import BoxCenter from 'components/Common/BoxCenter/BoxCenter'
+import drawerIcon from 'assets/icons/icon-drawer.png'
 
 export default function TemporaryDrawer() {
   const [openDrawer, setOpenDrawer] = React.useState(false)
@@ -53,9 +49,6 @@ export default function TemporaryDrawer() {
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
     >
-      <BoxCenter>
-        <CustomImage src={Logo} height='9vh' width='auto' />
-      </BoxCenter>
       <List>
         {itemsDrawer().map((item, index) => (
           <LinkStyled to={item.path} key={`item-header-${index}`}>
@@ -82,7 +75,7 @@ export default function TemporaryDrawer() {
       {
         <React.Fragment key={'left'}>
           <ButtonDrawer onClick={toggleDrawer(true)} variant='outlined'>
-            <MenuIcon />
+            <IconDrawer src={drawerIcon} />
           </ButtonDrawer>
           <Drawer
             anchor={'left'}

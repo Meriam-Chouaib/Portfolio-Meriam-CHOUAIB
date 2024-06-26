@@ -8,4 +8,6 @@ export enum RouteIdEnum {
   NotFound = '/404',
   Auth = 'auth',
   ForgetPassword = '/forget',
+  Projects = '/projects',
+  Blog = '/blog',
 }

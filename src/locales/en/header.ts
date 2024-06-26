@@ -4,4 +4,6 @@ export const header = {
   about: 'About',
   contact: 'Contact',
   signup: 'Sign up',
+  projects: 'Projects',
+  blog: 'Blog',
 }

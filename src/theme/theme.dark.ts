@@ -6,14 +6,15 @@ const paletteDark: ThemeOptions = {
   palette: {
     mode: 'dark',
     primary: {
-      main: '#AD2184',
-      dark: '#BC1089',
+      main: '#110835',
+      dark: '#080808',
+      light: '#380855',
       contrastText: '#FFF',
     },
     secondary: {
-      main: '#AD2184',
+      main: '#ce18b8',
       light: '#f2b1df',
-      dark: '#f5f5f5',
+      dark: '#290928',
       contrastText: '#f5f5f5',
     },
     error: {

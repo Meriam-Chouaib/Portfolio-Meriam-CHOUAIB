@@ -14,4 +14,7 @@ export const GlobalFonts = {
   FONT_DANCING_SCRIPT: 'Dancing Script ',
 
   FONT_SECONDARY: 'IBMPlex',
+
+  FONT_CURSIVE: 'cursive',
+  FONT_MONOSPACE: 'monospace',
 }

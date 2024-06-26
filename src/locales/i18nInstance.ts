@@ -3,7 +3,7 @@ import i18n from 'i18next'
 
 import fr from 'locales/fr'
 import en from 'locales/en'
-import { FR } from 'config/constant/common'
+import { FR, EN } from 'config/constant/common'
 
 const initialLanguage = FR
 
