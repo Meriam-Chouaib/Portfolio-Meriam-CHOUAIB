@@ -1,5 +1,5 @@
-import i18next from 'i18next'
+import i18nInstance from 'locales/i18nInstance'
 
 export function switchLanguage(lng: string) {
-  i18next.changeLanguage(lng)
+  i18nInstance.changeLanguage(lng)
 }

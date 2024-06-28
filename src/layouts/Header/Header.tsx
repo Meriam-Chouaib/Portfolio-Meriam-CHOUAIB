@@ -9,14 +9,13 @@ import {
   Name,
 } from 'layouts/Header/Header.style'
 import { useTranslation } from 'react-i18next'
-import { Box, Button, Container, Typography } from '@mui/material'
 import { itemsDrawer } from 'layouts/Header/Headers.constant' // Adjust the import path as necessary
 import { AppThemes } from 'config/enums/theme.enums'
 import { useDispatch } from 'react-redux'
-import { changeTheme, switchMode } from 'redux/slices/app/appSlice'
+import { changeTheme } from 'redux/slices/app/appSlice'
 import { useAppSelector } from 'redux/hooks'
-import { ToggleSwitch } from 'components/ToggleButton/ToggleButton.style'
 import ButtonTraduction from 'layouts/Header/ButtonTraduction/ButtonTraduction'
+import ToggleButton from 'components/ToggleButton/ToggleButton'
 
 function Header() {
   const { t } = useTranslation()
@@ -51,11 +50,11 @@ function Header() {
             </LinkHeader>
           ))}
         </BoxMenu>
-        <ToggleSwitch onChange={toggleTheme} />
+        <ToggleButton onChange={toggleTheme} />
 
         <ButtonTraduction />
 
-        <ButtonContact>Contact me</ButtonContact>
+        <ButtonContact>{t('header.contact_me')}</ButtonContact>
       </ContainerStyled>
     </BoxHeader>
   )

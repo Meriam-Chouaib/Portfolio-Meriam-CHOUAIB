@@ -6,13 +6,13 @@ const paletteLight: ThemeOptions = {
   palette: {
     mode: 'light',
     primary: {
-      main: '#69d6d4',
+      main: '#f5f5f5',
       dark: '#36054a',
       light: '#7ED7C1',
       contrastText: '#110835',
     },
     secondary: {
-      main: '#380855',
+      main: '#36054a',
       light: '#9EE6CF',
       dark: '#4BA2AC',
       contrastText: '#461959',

@@ -6,4 +6,5 @@ export const header = {
   signup: 'Inscrire',
   projects: 'Projets',
   blog: 'Blog',
+  contact_me: 'Contactez moi',
 }

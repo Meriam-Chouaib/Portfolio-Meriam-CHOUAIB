@@ -10,9 +10,10 @@ export const ToggleSwitch = styled(Switch)(({ theme }) => ({
   '& .MuiSwitch-switchBase': {
     padding: 0,
     margin: 0,
+    color: theme.palette.secondary.main,
     transition: 'transform 0.3s ease-in-out',
     '&.Mui-checked': {
-      transform: 'translateX(20px)', // Move to the right for checked state
+      transform: 'translateX(20px)',
       color: theme.palette.secondary.main,
       '& + .MuiSwitch-track': {
         backgroundColor: theme.palette.secondary.main, // Checked background color

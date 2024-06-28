@@ -1,4 +1,4 @@
-import { FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material'
+import { MenuItem, Select, SelectChangeEvent } from '@mui/material'
 import { TraductionForm } from 'layouts/Header/Header.style'
 import { switchLanguage } from 'utils/service/translation.service'
 
@@ -11,10 +11,6 @@ function ButtonTraduction() {
           id='demo-simple-select-standard'
           onChange={(event: SelectChangeEvent) => {
             switchLanguage(event.target.value)
-            console.log(
-              '🚀 ~ ButtonTraduction ~ event.target.value:',
-              event.target.value
-            )
           }}
           sx={{ height: '2rem' }}
           defaultValue={'en'}
