@@ -1,29 +1,22 @@
-import { useTranslation } from 'react-i18next'
+import { Box, Grid, Link } from '@mui/material'
+import { GridStyled, BoxStyled, ImgDeveloper } from 'pages/Home/Home.style'
+import ImgMeriam from 'assets/images/img_developer.png'
+import TextDescriptionDeveloper from 'features/TextDescriptionDeveloper/TextDescriptionDeveloper'
+import MySocialIcons from 'features/MySocialIcons/MySocialIcons'
 
-import { StepsRecord } from 'pages/SignupPage/SignupPage.type'
-
-import { Box, Typography } from '@mui/material'
-import { BoxStyled } from 'pages/Home/Home.style'
-import BoxCenter from 'components/Common/BoxCenter/BoxCenter'
-import CustomSwiper from 'pages/Home/CustomSwiper/CustomSwiper'
-import PieActiveArc from 'components/Charts/ArcChart/ArcChart'
-interface HomeProps {
-  oldStepsRecord: StepsRecord
-  onNextStep: (newStepsRecord: StepsRecord) => void
-  onPreviousStep: () => void
-}
 function Home() {
-  const { t } = useTranslation()
-
   return (
-    <BoxCenter>
-      <BoxStyled margin={'2rem 0rem'}>
-        <CustomSwiper />
-        <Box>
-          <Typography variant='h1'>{t('home.name')}</Typography>
-        </Box>
-      </BoxStyled>
-    </BoxCenter>
+    <BoxStyled sx={{ display: 'flex' }}>
+      <GridStyled container spacing={2} margin={'2rem 1rem'}>
+        <Grid item xs={12} md={4} lg={5}>
+          <TextDescriptionDeveloper />
+        </Grid>
+        <GridStyled item xs={12} md={8} lg={7} isCenter={true}>
+          <ImgDeveloper src={ImgMeriam} />
+          <MySocialIcons />
+        </GridStyled>
+      </GridStyled>
+    </BoxStyled>
   )
 }
 export default Home

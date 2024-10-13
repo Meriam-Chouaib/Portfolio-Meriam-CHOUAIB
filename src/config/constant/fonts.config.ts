@@ -17,4 +17,6 @@ export const GlobalFonts = {
 
   FONT_CURSIVE: 'cursive',
   FONT_MONOSPACE: 'monospace',
+
+  FONT_HELVETICA: 'Helvetica Neue, Helvetica',
 }

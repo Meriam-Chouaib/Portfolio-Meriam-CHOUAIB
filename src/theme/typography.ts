@@ -9,7 +9,8 @@ const typography: TypographyOptions = {
   fontWeightBold: 900,
   h1: {
     fontWeight: 700,
-    fontFamily: GlobalFonts.FONT_DANCING_SCRIPT,
+    fontFamily: GlobalFonts.FONT_HELVETICA,
+    // fontFamily: GlobalFonts.FONT_DANCING_SCRIPT,
 
     lineHeight: '5rem',
     fontSize: '4.5rem',
