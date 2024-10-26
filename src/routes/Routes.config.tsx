@@ -13,7 +13,7 @@ const RoutesConfig: RouteObject[] = [
     path: RouteIdEnum.Root,
     children: [
       {
-        path: RouteIdEnum.Home,
+        path: RouteIdEnum.Root,
         element: <Home />,
       },
       {

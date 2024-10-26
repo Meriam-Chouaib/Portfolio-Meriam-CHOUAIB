@@ -9,7 +9,7 @@ const paletteDark: ThemeOptions = {
       main: '#110835',
       dark: '#080808',
       light: '#380855',
-      contrastText: '#FFF',
+      contrastText: '#7bbfc3',
     },
     secondary: {
       main: '#ce18b8',
@@ -20,8 +20,13 @@ const paletteDark: ThemeOptions = {
     error: {
       main: '#461959',
     },
+    background: {
+      paper: '#110835',
+      default: '#FFFFFF',
+    },
     text: {
-      primary: '#0e7cb4',
+      primary: '#7bbfc3',
+      secondary: '#6df7ff',
     },
   },
   typography,

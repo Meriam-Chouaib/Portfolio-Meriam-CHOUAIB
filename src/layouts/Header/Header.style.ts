@@ -47,8 +47,8 @@ export const ContainerStyled = styled(Container)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
+
   '&.MuiContainer-root': {
-    paddingRight: '6px',
     maxWidth: '10 0%',
   },
 }))
@@ -93,7 +93,7 @@ export const ButtonContact = styled(Button)(({ theme }) => ({
   fontFamily: GlobalFonts.FONT_MONOSPACE,
   width: '150px',
   borderRadius: '30px',
-  padding: '15px',
+  padding: '10px',
   color: ColorsConfig.grey[200],
   ':hover': {
     backgroundColor: ColorsConfig.primary.contrastText,

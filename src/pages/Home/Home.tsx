@@ -6,7 +6,7 @@ import MySocialIcons from 'features/MySocialIcons/MySocialIcons'
 
 function Home() {
   return (
-    <BoxStyled sx={{ display: 'flex' }}>
+    <BoxStyled>
       <GridStyled container spacing={2} margin={'2rem 1rem'}>
         <Grid item xs={12} md={4} lg={5}>
           <TextDescriptionDeveloper />

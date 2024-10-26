@@ -31,8 +31,14 @@ const paletteLight: ThemeOptions = {
     success: {
       main: '#23810a',
     },
+
+    background: {
+      paper: '#FFFFFF',
+      default: '#FFFFFF',
+    },
     text: {
-      primary: '#461959',
+      primary: '#110835',
+      secondary: '#110835',
     },
   },
   typography,

@@ -35,10 +35,6 @@ function Header() {
       <ContainerStyled>
         <TemporaryDrawer />
 
-        <BoxName isDark={false}>
-          <Name variant='h2'>Chouaib Meriam</Name>
-        </BoxName>
-
         <BoxMenu>
           {itemsDrawer().map((item, index) => (
             <LinkHeader
