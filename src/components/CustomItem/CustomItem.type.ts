@@ -1,5 +1,6 @@
 export interface CustomItemProps {
-  img: string
+  video?: string
+  imgs?: string[] | string
   description: string
   title: string
 }

@@ -15,7 +15,7 @@ const paletteLight: ThemeOptions = {
       main: '#36054a',
       light: '#9EE6CF',
       dark: '#4BA2AC',
-      contrastText: '#461959',
+      contrastText: '#7bbfc3',
     },
     grey: {
       50: '#fafafa',

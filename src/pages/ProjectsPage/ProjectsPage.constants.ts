@@ -1,20 +1,36 @@
 import { CustomItemProps } from 'components/CustomItem/CustomItem.type'
-import ImgMeriam from 'assets/images/img_developer.png'
-
+import dwirty_3 from 'assets/images/dwirty3.png'
+import demoAskDoctors from 'assets/videos/demoAskDoctors.mp4'
+import demoStudyRent from 'assets/videos/démo_rapide.mp4'
 export const projectItems: CustomItemProps[] = [
   {
-    img: ImgMeriam,
-    description: 'header.projects',
-    title: 'the developer',
+    video: demoStudyRent,
+    description: 'projects.studyRentDescription',
+    title: 'projects.studyRent',
   },
   {
-    img: ImgMeriam,
-    description: 'header.projects',
-    title: 'the developer',
+    video: demoAskDoctors,
+    description: 'projects.askDoctorsDescription',
+    title: 'projects.askDoctors',
   },
   {
-    img: ImgMeriam,
-    description: 'header.projects',
-    title: 'the developer',
+    imgs: dwirty_3,
+    description: 'projects.dwirtyDescription',
+    title: 'projects.dwirty',
+  },
+  {
+    video: demoStudyRent,
+    description: 'projects.studyRentDescription',
+    title: 'projects.studyRent',
+  },
+  {
+    video: demoAskDoctors,
+    description: 'projects.askDoctorsDescription',
+    title: 'projects.askDoctors',
+  },
+  {
+    imgs: dwirty_3,
+    description: 'projects.dwirtyDescription',
+    title: 'projects.dwirty',
   },
 ]

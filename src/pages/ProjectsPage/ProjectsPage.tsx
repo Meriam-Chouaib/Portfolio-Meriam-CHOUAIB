@@ -5,12 +5,13 @@ import { ProjectsBox } from 'pages/ProjectsPage/ProjectsPage.tyle'
 const ProjectsPage = () => {
   return (
     <>
-      <ProjectsBox>
+      <ProjectsBox id='projectsId'>
         {projectItems.map((item, index) => (
           <CustomItem
             description={item.description}
-            img={item.img}
+            imgs={item.imgs}
             title={item.title}
+            video={item.video}
           />
         ))}
       </ProjectsBox>

@@ -4,6 +4,11 @@ import { useLocation } from 'react-router-dom'
 // Define the itemsDrawer array
 export const items = [
   {
+    path: RouteIdEnum.Home,
+    txt: 'header.home',
+    isActive: false,
+  },
+  {
     path: RouteIdEnum.Projects,
     txt: 'header.projects',
     isActive: true,

@@ -6,6 +6,7 @@ import LoginPage from 'pages/LoginPage'
 import ProjectsPage from 'pages/ProjectsPage/ProjectsPage'
 import SignupPage from 'pages/SignupPage/SignupPage'
 import { StepsRecord } from 'pages/SignupPage/SignupPage.type'
+import { Navigate } from 'react-router-dom'
 import RouteObject from 'types/interfaces/RouteObject'
 
 const RoutesConfig: RouteObject[] = [
@@ -14,6 +15,10 @@ const RoutesConfig: RouteObject[] = [
     children: [
       {
         path: RouteIdEnum.Root,
+        element: <Home />,
+      },
+      {
+        path: RouteIdEnum.Home,
         element: <Home />,
       },
       {

@@ -15,14 +15,14 @@ const paletteDark: ThemeOptions = {
       main: '#ce18b8',
       light: '#f2b1df',
       dark: '#290928',
-      contrastText: '#f5f5f5',
+      contrastText: '#fff',
     },
     error: {
       main: '#461959',
     },
     background: {
       paper: '#110835',
-      default: '#FFFFFF',
+      default: '#110835',
     },
     text: {
       primary: '#7bbfc3',

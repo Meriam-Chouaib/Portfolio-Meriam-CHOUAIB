@@ -10,4 +10,5 @@ export enum RouteIdEnum {
   ForgetPassword = '/forget',
   Projects = '/projects',
   Blog = '/blog',
+  Empty = '',
 }
