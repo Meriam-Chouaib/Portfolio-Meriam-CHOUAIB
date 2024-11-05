@@ -6,6 +6,7 @@ import {
   ButtonContact,
   ContainerStyled,
   LinkHeader,
+  MenuItem,
   Name,
 } from 'layouts/Header/Header.style'
 import { useTranslation } from 'react-i18next'
@@ -16,11 +17,15 @@ import { changeTheme } from 'redux/slices/app/appSlice'
 import { useAppSelector } from 'redux/hooks'
 import ButtonTraduction from 'layouts/Header/ButtonTraduction/ButtonTraduction'
 import ToggleButton from 'components/ToggleButton/ToggleButton'
+import { DrawerItem } from 'layouts/Header/Header.type'
+import { scroller } from 'react-scroll'
+import { useState } from 'react'
 
 function Header() {
   const { t } = useTranslation()
   const dispatch = useDispatch()
   const theme = useAppSelector((state) => state.appReducer.theme)
+  const [activeSection, setActiveSection] = useState<string | null>(null)
 
   const toggleTheme = () => {
     const newTheme =
@@ -29,28 +34,38 @@ function Header() {
         : AppThemes.LIGHT_MODE
     dispatch(changeTheme({ theme: newTheme }))
   }
-
+  const scrollToSection = (sectionId: string): void => {
+    scroller.scrollTo(sectionId, {
+      duration: 1000,
+      delay: 0,
+      smooth: 'easeInOutQuart',
+    })
+    setActiveSection(sectionId)
+  }
   return (
     <BoxHeader>
       <ContainerStyled>
         <TemporaryDrawer />
 
         <BoxMenu>
-          {itemsDrawer().map((item, index) => (
-            <LinkHeader
-              to={item.path}
-              isactive={item.isActive}
+          {itemsDrawer().map((item: DrawerItem, index: number) => (
+            <MenuItem
               key={`item-header-${index}`}
+              onClick={() => scrollToSection(item.id)}
             >
-              {t(item.txt)}
-            </LinkHeader>
+              <LinkHeader isactive={activeSection === item.id}>
+                {t(item.txt)}
+              </LinkHeader>
+            </MenuItem>
           ))}
         </BoxMenu>
         <ToggleButton onChange={toggleTheme} />
 
         <ButtonTraduction />
 
-        <ButtonContact>{t('header.contact_me')}</ButtonContact>
+        <ButtonContact onClick={() => scrollToSection('contactId')}>
+          {t('header.contact_me')}
+        </ButtonContact>
       </ContainerStyled>
     </BoxHeader>
   )

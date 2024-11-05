@@ -1,4 +1,4 @@
-import { Box, Grid, Link } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import { GridStyled, BoxStyled, ImgDeveloper } from 'pages/Home/Home.style'
 import ImgMeriam from 'assets/images/img_developer.png'
 import TextDescriptionDeveloper from 'features/TextDescriptionDeveloper/TextDescriptionDeveloper'
@@ -20,6 +20,8 @@ function Home() {
         </GridStyled>
       </BoxStyled>
       <ProjectsPage />
+      {/* TODO create the form contact */}
+      <Box id='contactId'></Box>
     </>
   )
 }

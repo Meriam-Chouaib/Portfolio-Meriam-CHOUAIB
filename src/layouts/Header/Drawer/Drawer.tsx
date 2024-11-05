@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Drawer from '@mui/material/Drawer'
 import List from '@mui/material/List'
-
 import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
@@ -11,21 +10,15 @@ import { BoxDrawer } from 'layouts/Header/Header.style'
 import {
   ButtonDrawer,
   IconDrawer,
-  LinkStyled,
   ListItemTextStyled,
 } from 'layouts/Header/Drawer/Drawer.style'
 import { itemsDrawer } from 'layouts/Header/Headers.constant'
 import { useTranslation } from 'react-i18next'
 import drawerIcon from 'assets/icons/icon-drawer.png'
+import { scroller } from 'react-scroll'
 
 export default function TemporaryDrawer() {
   const [openDrawer, setOpenDrawer] = React.useState(false)
-  const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  })
   const { t } = useTranslation()
 
   const toggleDrawer =
@@ -38,9 +31,17 @@ export default function TemporaryDrawer() {
         return
       }
 
-      setState({ ...state, ['left']: open })
       setOpenDrawer(open)
     }
+
+  const scrollToSection = (id: string) => {
+    scroller.scrollTo(id, {
+      duration: 800,
+      delay: 0,
+      smooth: 'easeInOutQuart',
+    })
+    setOpenDrawer(false)
+  }
 
   const list = () => (
     <BoxDrawer
@@ -51,20 +52,14 @@ export default function TemporaryDrawer() {
     >
       <List>
         {itemsDrawer().map((item, index) => (
-          <LinkStyled to={item.path} key={`item-header-${index}`}>
-            <ListItem
-              key={item.txt}
-              disablePadding
-              sx={{ margin: '1rem 0rem' }}
-            >
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemTextStyled primary={t(item.txt)} />
-              </ListItemButton>
-            </ListItem>
-          </LinkStyled>
+          <ListItem key={item.txt} disablePadding sx={{ margin: '1rem 0rem' }}>
+            <ListItemButton onClick={() => scrollToSection(item.id)}>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemTextStyled primary={t(item.txt)} />
+            </ListItemButton>
+          </ListItem>
         ))}
       </List>
     </BoxDrawer>
@@ -72,20 +67,14 @@ export default function TemporaryDrawer() {
 
   return (
     <>
-      {
-        <React.Fragment key={'left'}>
-          <ButtonDrawer onClick={toggleDrawer(true)} variant='outlined'>
-            <IconDrawer src={drawerIcon} />
-          </ButtonDrawer>
-          <Drawer
-            anchor={'left'}
-            open={openDrawer}
-            onClose={toggleDrawer(false)}
-          >
-            {list()}
-          </Drawer>
-        </React.Fragment>
-      }
+      <React.Fragment key={'left'}>
+        <ButtonDrawer onClick={toggleDrawer(true)} variant='outlined'>
+          <IconDrawer src={drawerIcon} />
+        </ButtonDrawer>
+        <Drawer anchor={'left'} open={openDrawer} onClose={toggleDrawer(false)}>
+          {list()}
+        </Drawer>
+      </React.Fragment>
     </>
   )
 }

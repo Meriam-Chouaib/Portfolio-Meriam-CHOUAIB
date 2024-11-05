@@ -13,7 +13,7 @@ import { ColorsConfig } from 'config/constant/colors.config'
 import { pad } from 'lodash'
 export const BoxMenu = styled(Box)(({ theme }) => ({
   width: 'auto',
-
+  display: 'flex',
   justifyContent: 'center',
   [theme.breakpoints.down('md')]: {
     display: 'none',
@@ -53,7 +53,7 @@ export const ContainerStyled = styled(Container)(({ theme }) => ({
   },
 }))
 
-export const LinkHeader = styled(Link)(
+export const LinkHeader = styled(Typography)(
   ({ theme }) =>
     ({ isactive }: { isactive: boolean }) => ({
       color: isactive
@@ -119,6 +119,12 @@ export const ButtonContact = styled(Button)(({ theme }) => ({
 }))
 
 export const TraductionForm = styled(FormControl)(({ theme }) => ({
+  [theme.breakpoints.down(500)]: {
+    display: 'none',
+  },
+}))
+export const MenuItem = styled('span')(({ theme }) => ({
+  cursor: 'pointer',
   [theme.breakpoints.down(500)]: {
     display: 'none',
   },
