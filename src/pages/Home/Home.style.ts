@@ -68,4 +68,5 @@ export const NameText = styled(Typography)(({ theme }) => ({
 
 export const BoxGlobal = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
+  borderRadius: '30px',
 }))
