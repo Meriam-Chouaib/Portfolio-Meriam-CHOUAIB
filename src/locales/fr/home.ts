@@ -12,5 +12,9 @@ export const home = {
   developer_position: 'DÉVELOPPEUSE FRONT END',
   developer_name: 'Chouaib ',
   developer_LastName: ' Meriam',
-  developer_description: `Développeuse front-end expérimenté, maîtrisant les technologies web modernes, passionné par la création d'applications conviviales et engagé dans l'apprentissage continu et l'innovation.`,
+  developer_description: `Je suis développeuse front-end`,
+  developer_description_one: `engagé à fournir un code propre et`,
+  developer_description_two: `délivrer une expérience`,
+  developer_description_three: `utilisateur optimale.`,
+  developer_description2: `Développeuse front-end expérimenté, maîtrisant les technologies web modernes, passionné par la création d'applications conviviales et engagé dans l'apprentissage continu et l'innovation.`,
 }

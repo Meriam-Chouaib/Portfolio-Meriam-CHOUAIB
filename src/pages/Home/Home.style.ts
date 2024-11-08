@@ -16,8 +16,8 @@ export const GridStyled = styled(Grid)(
 )
 export const BoxStyled = styled(Box)(({ theme }) => ({
   display: 'flex',
-  backgroundColor: theme.palette.background.paper,
-  borderRadius: '26px',
+  borderRadius: '50px 50px 0px 0px',
+
   marginTop: '16px',
 
   [theme.breakpoints.down(860)]: { flexDirection: 'column' },
@@ -40,8 +40,8 @@ export const ImgDeveloper = styled('img')(({ theme }) => ({
 
 export const DescText = styled(Typography)(({ theme }) => ({
   textAlign: 'justify',
-  paddingTop: '40px',
-  color: theme.palette.text.primary,
+
+  color: '#54acc1',
 
   [theme.breakpoints.down('md')]: {
     width: '400px',
@@ -65,4 +65,7 @@ export const NameText = styled(Typography)(({ theme }) => ({
     fontSize: '64px',
   },
 }))
-74
+
+export const BoxGlobal = styled(Box)(({ theme }) => ({
+  backgroundColor: theme.palette.background.paper,
+}))

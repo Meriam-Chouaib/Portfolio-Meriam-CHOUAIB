@@ -18,19 +18,4 @@ export const projectItems: CustomItemProps[] = [
     description: 'projects.dwirtyDescription',
     title: 'projects.dwirty',
   },
-  {
-    video: demoStudyRent,
-    description: 'projects.studyRentDescription',
-    title: 'projects.studyRent',
-  },
-  {
-    video: demoAskDoctors,
-    description: 'projects.askDoctorsDescription',
-    title: 'projects.askDoctors',
-  },
-  {
-    imgs: dwirty_3,
-    description: 'projects.dwirtyDescription',
-    title: 'projects.dwirty',
-  },
 ]

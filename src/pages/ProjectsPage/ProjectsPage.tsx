@@ -1,11 +1,18 @@
+import { Box, Typography } from '@mui/material'
 import CustomItem from 'components/CustomItem/CustomItem'
 import { projectItems } from 'pages/ProjectsPage/ProjectsPage.constants'
-import { ProjectsBox } from 'pages/ProjectsPage/ProjectsPage.tyle'
+import {
+  BoxGlobal,
+  ProjectsBox,
+  TextSeparator,
+} from 'pages/ProjectsPage/ProjectsPage.style'
 
 const ProjectsPage = () => {
   return (
-    <>
-      <ProjectsBox id='projectsId'>
+    <BoxGlobal id='projectsId'>
+      <TextSeparator>... Latest works ...</TextSeparator>
+
+      <ProjectsBox>
         {projectItems.map((item, index) => (
           <CustomItem
             description={item.description}
@@ -15,7 +22,7 @@ const ProjectsPage = () => {
           />
         ))}
       </ProjectsBox>
-    </>
+    </BoxGlobal>
   )
 }
 

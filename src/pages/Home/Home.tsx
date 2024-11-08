@@ -1,13 +1,19 @@
 import { Box, Grid } from '@mui/material'
-import { GridStyled, BoxStyled, ImgDeveloper } from 'pages/Home/Home.style'
+import {
+  GridStyled,
+  BoxStyled,
+  ImgDeveloper,
+  BoxGlobal,
+} from 'pages/Home/Home.style'
 import ImgMeriam from 'assets/images/img_developer.png'
 import TextDescriptionDeveloper from 'features/TextDescriptionDeveloper/TextDescriptionDeveloper'
 import MySocialIcons from 'features/MySocialIcons/MySocialIcons'
 import ProjectsPage from 'pages/ProjectsPage/ProjectsPage'
+import Contact from 'features/Contact/Contact'
 
 function Home() {
   return (
-    <>
+    <BoxGlobal>
       <BoxStyled>
         <GridStyled container spacing={2} margin={'2rem 1rem'}>
           <Grid item xs={12} md={4} lg={5}>
@@ -21,8 +27,9 @@ function Home() {
       </BoxStyled>
       <ProjectsPage />
       {/* TODO create the form contact */}
-      <Box id='contactId'></Box>
-    </>
+
+      <Contact />
+    </BoxGlobal>
   )
 }
 export default Home

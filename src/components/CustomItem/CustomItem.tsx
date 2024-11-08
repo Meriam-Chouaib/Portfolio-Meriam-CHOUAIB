@@ -3,6 +3,7 @@ import {
   CustomItemStyled,
   DescriptionProject,
   ImageItem,
+  TitleProject,
   VideoItem,
 } from 'components/CustomItem/CustomItem.style'
 import { CustomItemProps } from 'components/CustomItem/CustomItem.type'
@@ -37,7 +38,6 @@ function CustomItem({ description, imgs, title, video }: CustomItemProps) {
         {video ? (
           <VideoItem
             ref={videoRef}
-            isEnlarged={isEnlarged}
             src={video}
             autoPlay={true}
             muted
@@ -52,9 +52,7 @@ function CustomItem({ description, imgs, title, video }: CustomItemProps) {
         )}
 
         <Box>
-          <Typography variant='h2' sx={{ fontSize: '22px', paddingY: '8px' }}>
-            {t(title)}
-          </Typography>
+          <TitleProject variant='h2'>{t(title)}</TitleProject>
           <DescriptionProject variant='h3'>
             {isExpanded || !isTruncated ? translatedDescription : truncated}
           </DescriptionProject>

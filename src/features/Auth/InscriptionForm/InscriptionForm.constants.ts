@@ -14,7 +14,7 @@ import CardRequest from 'types/models/CardRequest/CardRequest'
 
 import { SignupAttributes } from 'types/models/AccessCard/SignupAttributes/SignupAttributes'
 import { booleanToInterrogative } from 'utils/helpers/interrogative.helpers'
-import { InputTypes } from 'types/interfaces/FormTypes/InputObject'
+
 import { InputsConfig } from 'config/constant/inputs.config'
 export const YES_LABEL = 'signup.yes'
 export const NO_LABEL = 'signup.no'

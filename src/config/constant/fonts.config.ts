@@ -19,4 +19,5 @@ export const GlobalFonts = {
   FONT_MONOSPACE: 'monospace',
 
   FONT_HELVETICA: 'Helvetica Neue, Helvetica',
+  FONT_CAVEAT: "'Caveat', cursive",
 }

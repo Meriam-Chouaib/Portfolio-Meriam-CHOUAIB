@@ -17,6 +17,14 @@ const paletteDark: ThemeOptions = {
       dark: '#290928',
       contrastText: '#fff',
     },
+    grey: {
+      50: '#fafafa',
+      100: '#f5f5f5',
+      200: '#eeeeee',
+      300: '#36054a',
+      400: '#bdbdbd',
+      500: '#9e9e9e',
+    },
     error: {
       main: '#461959',
     },

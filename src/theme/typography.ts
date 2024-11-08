@@ -25,7 +25,7 @@ const typography: TypographyOptions = {
   h3: {
     fontWeight: 500,
     fontFamily: GlobalFonts.FONT_PRIMARY_500,
-    fontSize: '1.125rem',
+    fontSize: '1rem',
     lineHeight: '1.563rem',
   },
   h4: {

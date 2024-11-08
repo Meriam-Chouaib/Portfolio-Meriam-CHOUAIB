@@ -11,6 +11,10 @@ export const home = {
 
   developer_position: 'FRONTEND WEB DEVELOPER',
   developer_name: 'Chouaib Meriam',
-  developer_description: `
+  developer_description: `I'm Front-end web developer`,
+  developer_description_one: `focused on clean code and`,
+  developer_description_two: `and delivering an optimal`,
+  developer_description_three: `user experience.`,
+  developer_full_description: `
 Experienced front-end developer adept in modern web technologies, passionate about creating user-friendly applications, and committed to continuous learning and innovation.`,
 }

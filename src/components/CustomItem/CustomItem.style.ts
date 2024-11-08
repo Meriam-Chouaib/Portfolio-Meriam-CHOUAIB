@@ -3,7 +3,7 @@ import { Card, styled, Typography } from '@mui/material'
 export const CustomItemStyled = styled(Card)(
   ({ theme }) =>
     ({ isExpanded }: { isExpanded?: boolean }) => ({
-      backgroundColor: theme.palette.background.default,
+      backgroundColor: theme.palette.primary.contrastText,
       width: '270px',
       height: isExpanded ? 'auto' : '320px',
       borderRadius: 10,
@@ -23,16 +23,20 @@ export const ImageItem = styled('img')({
   objectFit: 'cover',
 })
 
-export const VideoItem = styled('video')(
-  ({ isEnlarged }: { isEnlarged: boolean }) => ({
-    borderRadius: '15px',
+export const VideoItem = styled('video')({
+  borderRadius: '15px',
 
-    width: '100%',
-    height: 'auto',
-  })
-)
-export const DescriptionProject = styled(Typography)(({ theme }) => ({
-  color: theme.palette.primary.contrastText,
   width: '100%',
   height: 'auto',
+})
+export const DescriptionProject = styled(Typography)(({ theme }) => ({
+  color: theme.palette.grey[300],
+  width: '100%',
+  height: 'auto',
+}))
+
+export const TitleProject = styled(Typography)(({ theme }) => ({
+  color: theme.palette.primary.light,
+  fontSize: '25px',
+  paddingY: '8px',
 }))
