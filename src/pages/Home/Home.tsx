@@ -10,6 +10,9 @@ import TextDescriptionDeveloper from 'features/TextDescriptionDeveloper/TextDesc
 import MySocialIcons from 'features/MySocialIcons/MySocialIcons'
 import ProjectsPage from 'pages/ProjectsPage/ProjectsPage'
 import Contact from 'features/Contact/Contact'
+import InscriptionForm from 'features/Auth/InscriptionForm/InscriptionForm'
+import { StepsRecord } from 'pages/SignupPage/SignupPage.type'
+import CardRequest from 'types/models/CardRequest/CardRequest'
 
 function Home() {
   return (

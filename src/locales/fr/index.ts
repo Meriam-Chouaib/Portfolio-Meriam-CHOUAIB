@@ -1,10 +1,21 @@
 import { about } from 'locales/fr/about'
 import { auth } from 'locales/fr/auth'
 import { common } from 'locales/fr/common'
+import { contact } from 'locales/fr/contact'
 import { header } from 'locales/fr/header'
 import { home } from 'locales/fr/home'
 import { projects } from 'locales/fr/projects'
 import { signup } from 'locales/fr/signup'
 
-const fr = { lng: 'fr', home, header, common, auth, signup, about, projects }
+const fr = {
+  lng: 'fr',
+  home,
+  header,
+  common,
+  auth,
+  signup,
+  about,
+  projects,
+  contact,
+}
 export default fr

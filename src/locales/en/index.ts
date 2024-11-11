@@ -1,10 +1,21 @@
 import { about } from 'locales/en/about'
 import { auth } from 'locales/en/auth'
 import { common } from 'locales/en/common'
+import { contact } from 'locales/en/contact'
 import { header } from 'locales/en/header'
 import { home } from 'locales/en/home'
 import { projects } from 'locales/en/projects'
 import { signup } from 'locales/en/signup'
 
-const en = { lng: 'en', home, header, common, auth, signup, about, projects }
+const en = {
+  lng: 'en',
+  home,
+  header,
+  common,
+  auth,
+  signup,
+  about,
+  projects,
+  contact,
+}
 export default en
