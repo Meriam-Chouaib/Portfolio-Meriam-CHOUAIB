@@ -1,7 +1,7 @@
 export const items = [
   {
     txt: 'header.projects',
-    id: 'projectsId',
+    id: 'projects',
   },
   {
     txt: 'header.blog',

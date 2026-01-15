@@ -20,15 +20,17 @@ export const BoxMenu = styled(Box)(({ theme }) => ({
   },
 }))
 export const BoxHeader = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.primary.main,
-  border: '2px solid',
-  borderRadius: '40px',
-
-  height: '4rem',
+  backgroundColor: 'rgba(15, 23, 42, 0.8)', // Semi-transparent slate
+  backdropFilter: 'blur(10px)',
+  borderBottom: `1px solid ${theme.palette.divider}`,
+  position: 'sticky',
+  top: 0,
+  zIndex: 1100,
+  height: '80px', // Standard height
   display: 'flex',
   alignItems: 'center',
-
   width: '100%',
+  boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
 }))
 export const BoxDrawer = styled(Box)(({ theme }) => ({
   display: 'none',
@@ -57,13 +59,17 @@ export const LinkHeader = styled(Typography)(
   ({ theme }) =>
     ({ isactive }: { isactive: boolean }) => ({
       color: isactive
-        ? theme.palette.secondary.light
-        : theme.palette.primary.contrastText,
+        ? theme.palette.secondary.main // Cyan for active
+        : theme.palette.mode === 'dark' ? '#f8fafc' : theme.palette.text.primary,
       textDecoration: 'none',
       fontSize: '16px',
-      fontWeight: '500',
-      padding: '0px 10px',
-      fontFamily: GlobalFonts.FONT_MONOSPACE,
+      fontWeight: '600',
+      padding: '0px 15px',
+      transition: 'color 0.3s ease',
+      cursor: 'pointer', // Ensure cursor pointer
+      '&:hover': {
+        color: theme.palette.primary.main, // Royal Blue hover
+      },
     })
 )
 export const Name = styled(Typography)(({ theme }) => ({
@@ -89,32 +95,24 @@ export const BoxName = styled(Box)(
     })
 )
 export const ButtonContact = styled(Button)(({ theme }) => ({
-  backgroundColor: ColorsConfig.primary.main,
-  fontFamily: GlobalFonts.FONT_MONOSPACE,
-  width: '150px',
-  borderRadius: '30px',
-  padding: '10px',
-  color: ColorsConfig.grey[200],
+  backgroundColor: theme.palette.primary.main,
+  color: theme.palette.common.white,
+  fontFamily: 'inherit',
+  fontWeight: 'bold',
+  borderRadius: '8px',
+  padding: '8px 20px',
+  textTransform: 'none',
+  boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+  border: 'none',
+  transition: 'all 0.3s ease',
   ':hover': {
-    backgroundColor: ColorsConfig.primary.contrastText,
+    backgroundColor: theme.palette.primary.dark,
+    transform: 'translateY(-2px)',
+    boxShadow: '0 6px 8px rgba(0,0,0,0.15)',
   },
   [theme.breakpoints.down('md')]: {
-    width: '100px',
+    padding: '6px 16px',
     fontSize: '14px',
-    padding: '10px',
-  },
-  [theme.breakpoints.down('sm')]: {
-    padding: '9px',
-  },
-
-  [theme.breakpoints.down(426)]: {
-    padding: '6px',
-  },
-  [theme.breakpoints.down(426)]: {
-    padding: '4px',
-  },
-  [theme.breakpoints.down(387)]: {
-    padding: '2px',
   },
 }))
 

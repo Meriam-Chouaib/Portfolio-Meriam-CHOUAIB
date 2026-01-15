@@ -9,12 +9,10 @@ export const home = {
   swiper_home_title_2: 'Expanding Linguistic Mastery',
   swiper_home_title_3: 'Sharpening Focus with Reading',
 
-  developer_position: 'FRONTEND WEB DEVELOPER',
+  developer_position: 'FULL STACK JS DEVELOPER',
   developer_name: 'Chouaib Meriam',
-  developer_description: `I'm Front-end web developer`,
-  developer_description_one: `focused on clean code and`,
-  developer_description_two: `and delivering an optimal`,
-  developer_description_three: `user experience.`,
-  developer_full_description: `
-Experienced front-end developer adept in modern web technologies, passionate about creating user-friendly applications, and committed to continuous learning and innovation.`,
+  developer_tagline: 'Expert in React, Node.js & Scalable Web Architecture',
+  developer_description: `Full-stack JavaScript Developer with 5 years of experience. I build high-performance, scalable web applications (SaaS, eCommerce) mastering the React ecosystem, NestJS, and complex API integration. Passionate about Clean Code and Agile methodologies.`,
+  cta_projects: 'View My Work',
+  cta_contact: 'Contact Me',
 }

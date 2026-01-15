@@ -22,16 +22,6 @@ const RoutesConfig: RouteObject[] = [
         element: <Home />,
       },
       {
-        path: RouteIdEnum.Login,
-
-        element: <LoginPage />,
-      },
-      {
-        path: RouteIdEnum.Signup,
-
-        element: <SignupPage />,
-      },
-      {
         path: RouteIdEnum.About,
         element: <AboutPage />,
       },

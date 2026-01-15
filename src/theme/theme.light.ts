@@ -6,7 +6,7 @@ const paletteLight: ThemeOptions = {
   palette: {
     mode: 'light',
     primary: {
-      main: '#f5f5f5',
+      main: '#44045eff',
       dark: '#36054a',
       light: '#7ED7C1',
       contrastText: '#110835',

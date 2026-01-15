@@ -3,4 +3,6 @@ export interface CustomItemProps {
   imgs?: string[] | string
   description: string
   title: string
+  techStack?: string[]
+  githubLink?: string
 }

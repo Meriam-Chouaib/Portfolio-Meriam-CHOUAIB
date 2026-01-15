@@ -6,6 +6,8 @@ import { header } from 'locales/en/header'
 import { home } from 'locales/en/home'
 import { projects } from 'locales/en/projects'
 import { signup } from 'locales/en/signup'
+import { skills } from 'locales/en/skills'
+import { experience } from 'locales/en/experience'
 
 const en = {
   lng: 'en',
@@ -17,5 +19,7 @@ const en = {
   about,
   projects,
   contact,
+  skills,
+  experience,
 }
 export default en

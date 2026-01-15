@@ -9,12 +9,10 @@ export const home = {
   swiper_home_title_2: 'Élargir la maîtrise linguistique',
   swiper_home_title_3: 'Aiguiser la concentration avec la lecture',
 
-  developer_position: 'DÉVELOPPEUSE FRONT END',
-  developer_name: 'Chouaib ',
-  developer_LastName: ' Meriam',
-  developer_description: `Je suis développeuse front-end`,
-  developer_description_one: `engagé à fournir un code propre et`,
-  developer_description_two: `délivrer une expérience`,
-  developer_description_three: `utilisateur optimale.`,
-  developer_description2: `Développeuse front-end expérimenté, maîtrisant les technologies web modernes, passionné par la création d'applications conviviales et engagé dans l'apprentissage continu et l'innovation.`,
+  developer_position: 'DÉVELOPPEUSE FULL STACK JS',
+  developer_name: 'Chouaib Meriam',
+  developer_tagline: 'Expertise en React, Node.js & Architecture Web Scalable',
+  developer_description: `Développeuse Full-stack JavaScript avec 5 ans d’expérience. Je conçois des applications web performantes et évolutives (SaaS, eCommerce) en maîtrisant l'écosystème React, NestJS et l'intégration API complexe. Passionnée par le Clean Code et les méthodes Agile.`,
+  cta_projects: 'Voir mes projets',
+  cta_contact: 'Me contacter',
 }

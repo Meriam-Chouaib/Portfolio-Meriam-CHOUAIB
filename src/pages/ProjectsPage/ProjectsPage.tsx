@@ -1,5 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import CustomItem from 'components/CustomItem/CustomItem'
+import { useTranslation } from 'react-i18next'
 import { projectItems } from 'pages/ProjectsPage/ProjectsPage.constants'
 import {
   BoxGlobal,
@@ -8,9 +9,12 @@ import {
 } from 'pages/ProjectsPage/ProjectsPage.style'
 
 const ProjectsPage = () => {
+  const { t } = useTranslation() // Ensure useTranslation is imported
   return (
-    <BoxGlobal id='projectsId'>
-      <TextSeparator>... Latest works ...</TextSeparator>
+    <BoxGlobal id='projects' sx={{ py: 8 }}>
+      <Typography variant="h2" align="center" gutterBottom sx={{ mb: 6, fontWeight: 'bold' }} color='primary'  >
+        {t('projects.section_title')}
+      </Typography>
 
       <ProjectsBox>
         {projectItems.map((item, index) => (

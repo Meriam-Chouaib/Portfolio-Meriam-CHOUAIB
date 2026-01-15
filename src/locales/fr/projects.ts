@@ -1,5 +1,6 @@
 export const projects = {
-  askDoctors: 'Ask doctors',
+  section_title: 'Projets Récents',
+  askDoctors: 'Ask Doctors - Plateforme de Télémédecine',
   dwirty: 'Dwirty',
   studyRent: 'Study Rent',
   askDoctorsDescription: `Ces fonctionnalités facilitent l'interaction médicale en permettant de consulter les solutions des docteurs, de suggérer des sujets de discussion, et d'accéder à la liste des médecins.`,

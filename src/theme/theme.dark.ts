@@ -6,35 +6,42 @@ const paletteDark: ThemeOptions = {
   palette: {
     mode: 'dark',
     primary: {
-      main: '#110835',
-      dark: '#080808',
-      light: '#380855',
-      contrastText: '#7bbfc3',
+      main: '#3b82f6', // Royal Blue - Trust & Professionalism
+      light: '#60a5fa', // Light Blue
+      dark: '#2563eb', // Deep Blue
+      contrastText: '#ffffff',
     },
     secondary: {
-      main: '#ce18b8',
-      light: '#f2b1df',
-      dark: '#290928',
-      contrastText: '#fff',
-    },
-    grey: {
-      50: '#fafafa',
-      100: '#f5f5f5',
-      200: '#eeeeee',
-      300: '#36054a',
-      400: '#bdbdbd',
-      500: '#9e9e9e',
-    },
-    error: {
-      main: '#461959',
+      main: '#06b6d4', // Cyan - Modern Tech Feel
+      light: '#67e8f9',
+      dark: '#0891b2',
+      contrastText: '#ffffff',
     },
     background: {
-      paper: '#110835',
-      default: '#110835',
+      default: '#0f172a', // Slate 900 - Deepest Navy
+      paper: '#1e293b', // Slate 800 - Card Background
     },
     text: {
-      primary: '#7bbfc3',
-      secondary: '#6df7ff',
+      primary: '#f8fafc', // Slate 50 - High Contrast
+      secondary: '#94a3b8', // Slate 400 - Muted
+    },
+    error: {
+      main: '#ef4444',
+    },
+    success: {
+      main: '#22c55e',
+    },
+    grey: {
+      50: '#f8fafc',
+      100: '#f1f5f9',
+      200: '#e2e8f0',
+      300: '#cbd5e1',
+      400: '#94a3b8',
+      500: '#64748b',
+      600: '#475569',
+      700: '#334155',
+      800: '#1e293b',
+      900: '#0f172a',
     },
   },
   typography,

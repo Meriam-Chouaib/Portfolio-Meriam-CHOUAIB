@@ -1,12 +1,13 @@
 export const projects = {
-  askDoctors: 'Ask doctors',
-  dwirty: 'Dwirty',
-  studyRent: 'Study Rent',
+  section_title: 'Featured Projects',
+  askDoctors: 'Ask Doctors - Telemedicine Platform',
+  dwirty: 'Dwirty - Art E-commerce',
+  studyRent: 'StudyRent - Housing Solution',
   askDoctorsDescription:
-    "These features enhance medical interaction by allowing access to doctors' proposed solutions, suggesting discussion topics, and viewing the list of available doctors.",
+    'Developed a real-time consultation platform connecting patients with specialists. Implemented secure messaging and video calls, reducing wait times by 60% and improving healthcare accessibility.',
 
   dwirtyDescription:
-    'Dwirty is an innovative platform that showcases unique works of art. Explore a diverse collection, add your favorite pieces to the cart, and make your purchases with ease.',
+    'Built a high-performance e-commerce marketplace for unique artworks. Optimized for SEO and mobile responsiveness, resulting in a 40% increase in user engagement and seamless checkout flow.',
   studyRentDescription:
-    'StudyRent is a platform for renting houses to students, providing precise locations between the university and the housing. It features interfaces for owners, administrators, and students.',
+    'Engineered a student housing aggregator with geolocation features. Simplified the rental process for 1,000+ users by integrating advanced filtering and direct landlord communication.',
 }

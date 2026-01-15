@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, Chip } from '@mui/material'
 import {
   CustomItemStyled,
   DescriptionProject,
@@ -12,7 +12,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { truncateText } from 'utils/helpers/textHelper'
 
-function CustomItem({ description, imgs, title, video }: CustomItemProps) {
+function CustomItem({ description, imgs, title, video, techStack, githubLink }: CustomItemProps) {
   const { t } = useTranslation()
   const {
     videoRef,
@@ -27,7 +27,7 @@ function CustomItem({ description, imgs, title, video }: CustomItemProps) {
   // Get truncated text and its status
   const { truncated, isTruncated } = truncateText({
     text: translatedDescription,
-    maxLength: 100,
+    maxLength: 150, // Increased for better readability
   })
   const toggleDescription = () => {
     setIsExpanded(!isExpanded)
@@ -51,11 +51,22 @@ function CustomItem({ description, imgs, title, video }: CustomItemProps) {
           <ImageItem src={imgs} />
         )}
 
-        <Box>
+        <Box sx={{ p: 2, display: 'flex', flexDirection: 'column', gap: 1 }}>
           <TitleProject variant='h2'>{t(title)}</TitleProject>
-          <DescriptionProject variant='h3'>
+
+          {/* Tech Stack Chips */}
+          {techStack && (
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, mb: 1 }}>
+              {techStack.map((tech) => (
+                <Chip key={tech} label={tech} size="small" color="primary" variant="outlined" />
+              ))}
+            </Box>
+          )}
+
+          <DescriptionProject variant='body1' sx={{ lineHeight: 1.6 }}>
             {isExpanded || !isTruncated ? translatedDescription : truncated}
           </DescriptionProject>
+
           {isTruncated && (
             <Typography
               paddingY={1}
@@ -65,6 +76,14 @@ function CustomItem({ description, imgs, title, video }: CustomItemProps) {
             >
               {isExpanded ? 'Show Less' : 'Show More...'}
             </Typography>
+          )}
+
+          {githubLink && (
+            <Box sx={{ mt: 2 }}>
+              <a href={githubLink} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Typography variant="button" sx={{ borderBottom: '1px solid', pb: 0.5 }}>View Source Code</Typography>
+              </a>
+            </Box>
           )}
         </Box>
       </CustomItemStyled>
