@@ -8,4 +8,12 @@ export const contact = {
   info_email: 'meriamchouaib7@gmail.com',
   info_location: 'Monastir, Tunisia',
   info_social: 'Connect with me',
+  coordonnees: 'Contact Details',
+  email_header: 'EMAIL',
+  location_header: 'LOCATION',
+  cv_title: 'My CV',
+  cv_description: "Curious to know more? Take a look at my journey!",
+  cv_button_view: 'View CV',
+  form_title: 'Send me a message',
+  cv_dialog_title: 'Curriculum Vitae',
 }

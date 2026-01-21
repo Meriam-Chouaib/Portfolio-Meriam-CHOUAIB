@@ -4,8 +4,12 @@ import {
   BoxStyled,
   ImgDeveloper,
   BoxGlobal,
+  AccentGlow,
+  ImageContainer,
+  GradientBackground,
+  DecorativeBorder,
 } from 'pages/Home/Home.style'
-import ImgMeriam from 'assets/images/img_developer.png'
+import ImgMeriam from 'assets/images/miri.jpeg'
 import TextDescriptionDeveloper from 'features/TextDescriptionDeveloper/TextDescriptionDeveloper'
 import MySocialIcons from 'features/MySocialIcons/MySocialIcons'
 import ProjectsPage from 'pages/ProjectsPage/ProjectsPage'
@@ -26,20 +30,20 @@ function Home() {
                 <MySocialIcons />
               </Box>
             </Grid>
-            <GridStyled item xs={12} md={6} isCenter={true} sx={{ position: 'relative' }}>
-              <Box
-                sx={{
-                  position: 'absolute',
-                  width: '100%',
-                  height: '100%',
-                  bgcolor: 'secondary.main', // Use secondary (Teal) for glow contrast
-                  opacity: 0.15,
-                  borderRadius: '50%',
-                  filter: 'blur(90px)',
-                  zIndex: 0
-                }}
-              />
-              <ImgDeveloper src={ImgMeriam} style={{ position: 'relative', zIndex: 1, maxWidth: '80%' }} />
+
+            <GridStyled item xs={12} md={6} isCenter={false}>
+              <ImageContainer>
+                <GradientBackground />
+                <DecorativeBorder />
+
+                <ImgDeveloper
+                  src={ImgMeriam}
+                  alt="Meriam - Developer"
+                  style={{ position: 'relative', zIndex: 2 }}
+                />
+
+                <AccentGlow />
+              </ImageContainer>
             </GridStyled>
           </GridStyled>
         </BoxStyled>

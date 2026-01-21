@@ -9,9 +9,11 @@ export const CustomItemStyled = styled(Card)(
       borderRadius: 10,
       boxShadow: '0 5px 10px rgba(0, 0, 0, 0.2)',
       padding: '15px ',
-      transition: 'box-shadow 0.3s',
+      transition: 'box-shadow 0.3s, transform 0.3s ease-in-out',
+      cursor: 'pointer',
       '&:hover': {
         boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
+        transform: 'scale(1.02)',
       },
     })
 )

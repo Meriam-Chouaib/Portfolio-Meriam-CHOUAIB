@@ -7,7 +7,7 @@ const Skills = () => {
 
     return (
         <Box id="skills" sx={{ py: 8 }}>
-            <Typography variant="h2" align="center" gutterBottom sx={{ mb: 6, fontWeight: 'bold' }}>
+            <Typography variant="h2" align="center" gutterBottom sx={{ mb: 6, fontWeight: 'bold' }} color={'secondary'}>
                 {t('skills.title')}
             </Typography>
 

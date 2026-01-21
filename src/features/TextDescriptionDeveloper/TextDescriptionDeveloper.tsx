@@ -16,7 +16,7 @@ const TextDescriptionDeveloper = () => {
         {t('home.developer_position')}
       </PositionText>
 
-      <NameText variant='h1' sx={{ fontWeight: 900, mb: 2, background: (theme) => `-webkit-linear-gradient(45deg, ${theme.palette.secondary.main}, ${theme.palette.primary.main})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+      <NameText variant='h1' sx={{ fontWeight: 900, mb: 2, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }} >
         {t('home.developer_name')}
       </NameText>
 

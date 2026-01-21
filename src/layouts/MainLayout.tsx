@@ -9,9 +9,7 @@ export default function MainLayout() {
   return (
     <Suspense fallback={<CircularProgress />}>
       <Header />
-      <Container>
-        <Outlet />
-      </Container>
+      <Outlet />
       <Footer />
     </Suspense>
   )

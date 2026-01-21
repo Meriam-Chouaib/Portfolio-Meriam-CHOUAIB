@@ -5,4 +5,5 @@ export interface CustomItemProps {
   title: string
   techStack?: string[]
   githubLink?: string
+  onCardClick?: () => void
 }

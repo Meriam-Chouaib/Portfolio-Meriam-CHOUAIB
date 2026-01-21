@@ -67,6 +67,6 @@ export const CardColors = {
 export const ItalicInformationColors = {
   color: '#858C94',
 }
-export const Shadows = {
-  dark: '1px 1px 2px #461959',
-}
+export const Shadows = (theme?: any) => ({
+  dark: `1px 1px 2px ${theme.palette.grey[500]}`,
+})

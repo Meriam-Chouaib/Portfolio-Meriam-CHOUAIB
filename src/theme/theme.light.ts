@@ -6,7 +6,7 @@ const paletteLight: ThemeOptions = {
   palette: {
     mode: 'light',
     primary: {
-      main: '#44045eff',
+      main: '#1e0329',
       dark: '#36054a',
       light: '#7ED7C1',
       contrastText: '#110835',
@@ -22,8 +22,9 @@ const paletteLight: ThemeOptions = {
       100: '#f5f5f5',
       200: '#eeeeee',
       300: '#b5b8b9',
-      400: '#bdbdbd',
-      500: '#9e9e9e',
+      400: '#230a41ff',
+
+      500: '#34053eff',
     },
     error: {
       main: '#e02f2f',

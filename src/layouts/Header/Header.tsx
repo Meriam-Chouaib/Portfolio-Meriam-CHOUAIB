@@ -44,7 +44,7 @@ function Header() {
   }
   return (
     <BoxHeader>
-      <ContainerStyled>
+      <ContainerStyled maxWidth="xl">
         <TemporaryDrawer />
 
         <BoxMenu>

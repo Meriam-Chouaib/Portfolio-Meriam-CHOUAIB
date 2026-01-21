@@ -10,4 +10,5 @@ export const projects = {
     'Built a high-performance e-commerce marketplace for unique artworks. Optimized for SEO and mobile responsiveness, resulting in a 40% increase in user engagement and seamless checkout flow.',
   studyRentDescription:
     'Engineered a student housing aggregator with geolocation features. Simplified the rental process for 1,000+ users by integrating advanced filtering and direct landlord communication.',
+  internal_projects_note: "Note: I have also contributed to several complex internal company projects that cannot be publicly actively showcased due to confidentiality agreements.",
 }

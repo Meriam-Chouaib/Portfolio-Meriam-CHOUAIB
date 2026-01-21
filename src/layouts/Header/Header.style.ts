@@ -49,18 +49,15 @@ export const ContainerStyled = styled(Container)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-
-  '&.MuiContainer-root': {
-    maxWidth: '10 0%',
-  },
 }))
+
 
 export const LinkHeader = styled(Typography)(
   ({ theme }) =>
     ({ isactive }: { isactive: boolean }) => ({
       color: isactive
         ? theme.palette.secondary.main // Cyan for active
-        : theme.palette.mode === 'dark' ? '#f8fafc' : theme.palette.text.primary,
+        : '#f8fafc',
       textDecoration: 'none',
       fontSize: '16px',
       fontWeight: '600',
@@ -70,7 +67,7 @@ export const LinkHeader = styled(Typography)(
       '&:hover': {
         color: theme.palette.primary.main, // Royal Blue hover
       },
-    })
+    }),
 )
 export const Name = styled(Typography)(({ theme }) => ({
   color: theme.palette.primary.contrastText,
@@ -92,7 +89,7 @@ export const BoxName = styled(Box)(
       [theme.breakpoints.down('md')]: {
         width: 'auto',
       },
-    })
+    }),
 )
 export const ButtonContact = styled(Button)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
