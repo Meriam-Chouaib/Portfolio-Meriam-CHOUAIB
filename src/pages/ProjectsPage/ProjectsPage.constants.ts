@@ -1,7 +1,7 @@
 import { CustomItemProps } from 'components/CustomItem/CustomItem.type'
 import dwirty_3 from 'assets/images/dwirty3.png'
 import demoAskDoctors from 'assets/videos/demoAskDoctors.mp4'
-import demoStudyRent from 'assets/videos/démo_rapide.mp4'
+import demoStudyRent from 'assets/videos/demoAskDoctors.mp4'
 export const projectItems: CustomItemProps[] = [
   {
     video: demoStudyRent,
