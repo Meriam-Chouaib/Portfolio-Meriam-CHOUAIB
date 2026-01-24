@@ -1,22 +1,22 @@
 // form
-import { Controller, useFormContext } from 'react-hook-form';
+import { Controller, useFormContext } from 'react-hook-form'
 // @mui
-import { FormHelperText } from '@mui/material';
+import { FormHelperText } from '@mui/material'
 // type
-import { UploadMultiFile } from '../upload';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next'
+import UploadMultiFile from 'components/upload/UploadMultiFile'
 
 // ----------------------------------------------------------------------
 
 interface RHFUploadMultiFileProps {
-  name: string;
-  showPreview: boolean;
-  accept?: string;
-  maxSize?: number;
-  onDrop?: (files: File[]) => void;
-  onRemove: (file: File) => void;
-  onRemoveAll: () => void;
-  isEdit?: boolean;
+  name: string
+  showPreview: boolean
+  accept?: string
+  maxSize?: number
+  onDrop?: (files: File[]) => void
+  onRemove: (file: File) => void
+  onRemoveAll: () => void
+  isEdit?: boolean
 }
 
 export function RHFUploadMultiFile({
@@ -29,14 +29,14 @@ export function RHFUploadMultiFile({
   isEdit,
   ...other
 }: RHFUploadMultiFileProps) {
-  const { control } = useFormContext();
-  const { t } = useTranslation();
+  const { control } = useFormContext()
+  const { t } = useTranslation()
   return (
     <Controller
       name={name}
       control={control}
       render={({ field, fieldState: { error } }) => {
-        const checkError = !!error && field.value?.length === 0;
+        const checkError = !!error && field.value?.length === 0
 
         return (
           <UploadMultiFile
@@ -57,8 +57,8 @@ export function RHFUploadMultiFile({
             }
             {...other}
           />
-        );
+        )
       }}
     />
-  );
+  )
 }

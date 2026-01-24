@@ -51,7 +51,7 @@ export const getArrayErrorTitleAndMessage = (unknownError: unknown) => {
 
   if (Array.isArray(errors.data.errno)) {
     return errors.data.errno.map((err) => {
-      return `error.${generateErrno(err)}` ?? 'error.SWH'
+      return `error.${generateErrno(err)}`
     })
   }
 }

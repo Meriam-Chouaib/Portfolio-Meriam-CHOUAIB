@@ -6,4 +6,5 @@ export interface CustomButtonProps extends ButtonProps {
   onClick?: () => void;
   colorBack?: string;
   colorText?: string;
+  width?: string;
 }

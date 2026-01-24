@@ -12,16 +12,16 @@ const MySocialIcons = () => {
   return (
     <Box>
       <Stack direction='row' spacing={2}>
-        <IconButton onClick={() => handleRedirect('https://www.linkedin.com')}>
+        <IconButton onClick={() => handleRedirect('https://www.linkedin.com/in/meriem-chouaib-781910138/')}>
           <LinkedInIcon sx={{ fontSize: 30, color: 'text.secondary', '&:hover': { color: 'primary.main' } }} />
         </IconButton>
-        <IconButton onClick={() => handleRedirect('https://github.com')}>
+        <IconButton onClick={() => handleRedirect('https://github.com/Meriam-Chouaib')}>
           <GitHubIcon sx={{ fontSize: 30, color: 'text.secondary', '&:hover': { color: 'primary.main' } }} />
         </IconButton>
-        <IconButton onClick={() => handleRedirect('https://www.facebook.com')}>
+        <IconButton onClick={() => handleRedirect('https://www.facebook.com/meriam.chouaib.1')}>
           <FacebookIcon sx={{ fontSize: 30, color: 'text.secondary', '&:hover': { color: 'primary.main' } }} />
         </IconButton>
-        <IconButton onClick={() => handleRedirect('https://www.instagram.com')}>
+        <IconButton onClick={() => handleRedirect('https://www.instagram.com/chouaibmeriem5/')}>
           <InstagramIcon sx={{ fontSize: 30, color: 'text.secondary', '&:hover': { color: 'primary.main' } }} />
         </IconButton>
       </Stack>

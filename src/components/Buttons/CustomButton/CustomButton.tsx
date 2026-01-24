@@ -7,7 +7,7 @@ export const CustomButton = ({
   isLoading,
   children,
   colorBack,
-  colorText,
+  colorText, width,
   sx,
   ...props
 }: CustomButtonProps) => {
@@ -20,6 +20,7 @@ export const CustomButton = ({
         sx={{
           color: colorText,
           backgroundColor: colorBack,
+          width: width,
           ...sx
         }}
         {...props}

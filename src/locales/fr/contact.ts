@@ -16,4 +16,5 @@ export const contact = {
   cv_button_view: 'Voir le CV',
   form_title: 'Envoyez-moi un message',
   cv_dialog_title: 'Curriculum Vitae',
+  button_send_email: 'Envoyer un e-mail',
 }
