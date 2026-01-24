@@ -8,7 +8,7 @@ export const CustomItemStyled = styled(Card)(
       height: isExpanded ? 'auto' : '320px',
       borderRadius: 10,
       boxShadow: '0 5px 10px rgba(0, 0, 0, 0.2)',
-      padding: '15px ',
+      padding: '30px ',
       transition: 'box-shadow 0.3s, transform 0.3s ease-in-out',
       cursor: 'pointer',
       '&:hover': {

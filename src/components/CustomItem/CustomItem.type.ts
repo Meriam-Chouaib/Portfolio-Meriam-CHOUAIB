@@ -5,5 +5,6 @@ export interface CustomItemProps {
   title: string
   techStack?: string[]
   githubLink?: string
+  externalVideoLink?: string
   onCardClick?: () => void
 }

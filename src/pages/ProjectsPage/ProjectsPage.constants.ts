@@ -1,14 +1,16 @@
 import { CustomItemProps } from 'components/CustomItem/CustomItem.type'
 import dwirty_3 from 'assets/images/dwirty3.png'
 import demoAskDoctors from 'assets/videos/demoAskDoctors.mp4'
-import demoStudyRent from 'assets/videos/demoAskDoctors.mp4'
+import studyRent from 'assets/images/studyRent.png'
+
 export const projectItems: CustomItemProps[] = [
   {
-    video: demoStudyRent,
+    imgs: studyRent,
     description: 'projects.studyRentDescription',
     title: 'projects.studyRent',
     techStack: ['MERN Stack', 'Redux', 'Google Maps API', 'Socket.io'],
     githubLink: 'https://github.com/Meriam-Chouaib/StudyRentFront',
+    externalVideoLink: 'https://drive.google.com/file/d/1F_tg9_tEyPuk8tUxdRUXWMjy8LOwjn9D/preview',
   },
   {
     video: demoAskDoctors,

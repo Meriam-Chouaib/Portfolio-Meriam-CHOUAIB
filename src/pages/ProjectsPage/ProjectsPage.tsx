@@ -100,6 +100,7 @@ const ProjectsPage = () => {
               'linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05))',
             boxShadow: theme.shadows[24],
             overflow: 'hidden',
+            paddingBottom: '15px',
           },
         }}
       >
@@ -161,7 +162,18 @@ const ProjectsPage = () => {
                       objectFit: 'contain',
                     }}
                   />
-                ) : Array.isArray(selectedProject.imgs) ? (
+                ) : selectedProject.externalVideoLink ? <iframe
+                  src={`${selectedProject.externalVideoLink}?autoplay=1&mute=1`}
+                  title="Project video"
+                  allow="autoplay; fullscreen"
+                  allowFullScreen
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    border: 'none',
+                    objectFit: 'contain',
+                  }}
+                /> : Array.isArray(selectedProject.imgs) ? (
                   <Box
                     sx={{
                       display: 'flex',

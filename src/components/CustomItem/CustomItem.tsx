@@ -1,4 +1,5 @@
-import { Box, Typography, Chip } from '@mui/material'
+import { Box, Typography, Chip, Button } from '@mui/material'
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
 import {
   CustomItemStyled,
   DescriptionProject,
@@ -12,7 +13,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { truncateText } from 'utils/helpers/textHelper'
 
-function CustomItem({ description, imgs, title, video, techStack, githubLink, onCardClick }: CustomItemProps) {
+function CustomItem({ description, imgs, title, video, techStack, githubLink, externalVideoLink, onCardClick }: CustomItemProps) {
   const { t } = useTranslation()
   const {
     videoRef,
@@ -36,7 +37,16 @@ function CustomItem({ description, imgs, title, video, techStack, githubLink, on
   return (
     <>
       <CustomItemStyled isExpanded={isExpanded} onClick={onCardClick}>
-        {video ? (
+        {externalVideoLink ? (
+          <iframe
+            src={externalVideoLink}
+            width="100%"
+            height="160"
+            style={{ borderRadius: '15px', border: 'none' }}
+            allowFullScreen
+            title={title}
+          />
+        ) : video ? (
           <VideoItem
             ref={videoRef}
             src={video}
