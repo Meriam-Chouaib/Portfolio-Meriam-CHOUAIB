@@ -1,3 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+Sitemap: https://cheery-croquembouche-4cfcd2.netlify.app/sitemap.xml

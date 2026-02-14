@@ -1,85 +1,75 @@
 import * as React from 'react'
-import Drawer from '@mui/material/Drawer'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
-import ListItemButton from '@mui/material/ListItemButton'
-import ListItemIcon from '@mui/material/ListItemIcon'
-import InboxIcon from '@mui/icons-material/MoveToInbox'
-import MailIcon from '@mui/icons-material/Mail'
-import { BoxDrawer } from 'layouts/Header/Header.style'
+import { Drawer, List, ListItem, ListItemIcon, Divider, Typography, Box, IconButton } from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
+import CloseIcon from '@mui/icons-material/Close'
+import { useTranslation } from 'react-i18next'
+import { scroller } from 'react-scroll'
 import {
   ButtonDrawer,
-  IconDrawer,
-  ListItemTextStyled,
-} from 'layouts/Header/Drawer/Drawer.style'
+  DrawerContainer,
+  StyledListItemButton,
+  ListItemTextStyled
+} from './Drawer.style'
 import { itemsDrawer } from 'layouts/Header/Headers.constant'
-import { useTranslation } from 'react-i18next'
-import drawerIcon from 'assets/icons/icon-drawer.png'
-import { scroller } from 'react-scroll'
-import ButtonTraduction from 'layouts/Header/ButtonTraduction/ButtonTraduction'
 
 export default function TemporaryDrawer() {
-  const [openDrawer, setOpenDrawer] = React.useState(false)
+  const [open, setOpen] = React.useState(false)
   const { t } = useTranslation()
 
-  const toggleDrawer =
-    (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event.type === 'keydown' &&
-        ((event as React.KeyboardEvent).key === 'Tab' ||
-          (event as React.KeyboardEvent).key === 'Shift')
-      ) {
-        return
-      }
-
-      setOpenDrawer(open)
-    }
-
-  const scrollToSection = (id: string) => {
-    scroller.scrollTo(id, {
-      duration: 800,
-      delay: 0,
-      smooth: 'easeInOutQuart',
-    })
-    setOpenDrawer(false)
+  const toggleDrawer = (state: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+    if (event.type === 'keydown' && ((event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift')) return
+    setOpen(state)
   }
 
-  const list = () => (
-    <BoxDrawer
-      sx={{ width: 250 }}
-      role='presentation'
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
-    >
-      <List>
-        {itemsDrawer().map((item, index) => (
-          <ListItem key={item.txt} disablePadding sx={{ margin: '1rem 0rem' }}>
-            <ListItemButton onClick={() => scrollToSection(item.id)}>
-              <ListItemIcon>
-                {item.icon}
-              </ListItemIcon>
-              <ListItemTextStyled primary={t(item.txt)} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-
-      </List>
-
-    </BoxDrawer>
-  )
+  const scrollToSection = (id: string) => {
+    scroller.scrollTo(id, { duration: 800, delay: 0, smooth: 'easeInOutQuart' })
+    setOpen(false)
+  }
 
   return (
     <>
-      <React.Fragment key={'left'}>
-        <ButtonDrawer onClick={toggleDrawer(true)} variant='outlined'>
-          <IconDrawer src={drawerIcon} />
-        </ButtonDrawer>
-        <Drawer anchor={'left'} open={openDrawer} onClose={toggleDrawer(false)}>
-          {list()}
+      <ButtonDrawer onClick={toggleDrawer(true)}>
+        <MenuIcon fontSize="medium" />
+      </ButtonDrawer>
 
+      <Drawer
+        anchor="left"
+        open={open}
+        onClose={toggleDrawer(false)}
+        PaperProps={{ sx: { borderRight: 'none', boxShadow: '20px 0 50px rgba(0,0,0,0.1)' } }}
+      >
+        <DrawerContainer role="presentation">
+          {/* Header du Drawer avec Bouton Fermer */}
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4, px: 1 }}>
+            <Typography variant="h6" sx={{ fontWeight: 800, color: 'primary.main' }}>
+              Menu
+            </Typography>
+            <IconButton onClick={toggleDrawer(false)} size="small">
+              <CloseIcon fontSize="small" />
+            </IconButton>
+          </Box>
 
-        </Drawer>
-      </React.Fragment>
+          <List sx={{ p: 0 }}>
+            {itemsDrawer().map((item) => (
+              <ListItem key={item.id} disablePadding>
+                <StyledListItemButton onClick={() => scrollToSection(item.id)}>
+                  <ListItemIcon sx={{ minWidth: 40, color: 'text.secondary', transition: '0.2s' }}>
+                    {item.icon}
+                  </ListItemIcon>
+                  <ListItemTextStyled primary={t(item.txt)} />
+                </StyledListItemButton>
+              </ListItem>
+            ))}
+          </List>
+
+          {/* Footer du Drawer (Optionnel) */}
+          <Box sx={{ mt: 'auto', pt: 2, textAlign: 'center' }}>
+            <Typography variant="caption" color="text.disabled">
+              © 2026 Chouaib Meriam
+            </Typography>
+          </Box>
+        </DrawerContainer>
+      </Drawer>
     </>
   )
 }

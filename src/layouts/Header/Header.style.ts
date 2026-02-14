@@ -19,19 +19,7 @@ export const BoxMenu = styled(Box)(({ theme }) => ({
     display: 'none',
   },
 }))
-export const BoxHeader = styled(Box)(({ theme }) => ({
-  backgroundColor: 'rgba(15, 23, 42, 0.8)', // Semi-transparent slate
-  backdropFilter: 'blur(10px)',
-  borderBottom: `1px solid ${theme.palette.divider}`,
-  position: 'sticky',
-  top: 0,
-  zIndex: 1100,
-  height: '80px', // Standard height
-  display: 'flex',
-  alignItems: 'center',
-  width: '100%',
-  boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
-}))
+
 export const BoxDrawer = styled(Box)(({ theme }) => ({
   display: 'none',
 
@@ -52,23 +40,7 @@ export const ContainerStyled = styled(Container)(({ theme }) => ({
 }))
 
 
-export const LinkHeader = styled(Typography)(
-  ({ theme }) =>
-    ({ isactive }: { isactive: boolean }) => ({
-      color: isactive
-        ? theme.palette.secondary.main // Cyan for active
-        : '#f8fafc',
-      textDecoration: 'none',
-      fontSize: '16px',
-      fontWeight: '600',
-      padding: '0px 15px',
-      transition: 'color 0.3s ease',
-      cursor: 'pointer', // Ensure cursor pointer
-      '&:hover': {
-        color: theme.palette.primary.main, // Royal Blue hover
-      },
-    }),
-)
+
 export const Name = styled(Typography)(({ theme }) => ({
   color: theme.palette.primary.contrastText,
   [theme.breakpoints.down('md')]: {
@@ -91,27 +63,7 @@ export const BoxName = styled(Box)(
       },
     }),
 )
-export const ButtonContact = styled(Button)(({ theme }) => ({
-  backgroundColor: theme.palette.primary.main,
-  color: theme.palette.common.white,
-  fontFamily: 'inherit',
-  fontWeight: 'bold',
-  borderRadius: '8px',
-  padding: '8px 20px',
-  textTransform: 'none',
-  boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-  border: 'none',
-  transition: 'all 0.3s ease',
-  ':hover': {
-    backgroundColor: theme.palette.primary.dark,
-    transform: 'translateY(-2px)',
-    boxShadow: '0 6px 8px rgba(0,0,0,0.15)',
-  },
-  [theme.breakpoints.down('md')]: {
-    padding: '6px 16px',
-    fontSize: '14px',
-  },
-}))
+
 
 export const TraductionForm = styled(FormControl)(({ theme }) => ({
   [theme.breakpoints.down(500)]: {
@@ -122,5 +74,92 @@ export const MenuItem = styled('span')(({ theme }) => ({
   cursor: 'pointer',
   [theme.breakpoints.down(500)]: {
     display: 'none',
+  },
+}))
+export const BoxHeader = styled(Box)(({ theme }) => ({
+  // Effet Glassmorphism
+  backgroundColor: theme.palette.mode === 'dark'
+    ? 'rgba(10, 10, 18, 0.8)'
+    : 'rgba(255, 255, 255, 0.8)',
+  backdropFilter: 'blur(12px)',
+  WebkitBackdropFilter: 'blur(12px)',
+
+  // Bordure subtile utilisant votre couleur 'divider' du thème sombre
+  borderBottom: `1px solid ${theme.palette.mode === 'dark'
+    ? 'rgba(126, 215, 193, 0.1)'
+    : 'rgba(30, 3, 41, 0.05)'}`,
+
+  position: 'sticky',
+  top: 0,
+  zIndex: 1100,
+  height: '70px',
+  display: 'flex',
+  alignItems: 'center',
+  width: '100%',
+  transition: 'all 0.3s ease-in-out',
+}))
+
+export const LinkHeader = styled(Typography)<{ isactive: boolean }>(
+  ({ theme, isactive }) => ({
+    color: isactive
+      ? (theme.palette.mode === 'dark' ? theme.palette.primary.main : theme.palette.primary.main)
+      : (theme.palette.mode === 'dark' ? theme.palette.text.secondary : theme.palette.text.primary),
+    fontSize: '15px',
+    fontWeight: 600,
+    padding: '8px 16px',
+    cursor: 'pointer',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    position: 'relative',
+    display: 'flex',
+    alignItems: 'center',
+
+    '&:hover': {
+      color: theme.palette.primary.main,
+      transform: 'translateY(-1px)',
+    },
+
+    // Point lumineux sous l'élément actif au lieu d'une barre lourde
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      bottom: '0px',
+      left: '50%',
+      transform: isactive ? 'translateX(-50%) scale(1)' : 'translateX(-50%) scale(0)',
+      width: '4px',
+      height: '4px',
+      borderRadius: '50%',
+      backgroundColor: theme.palette.primary.main,
+      boxShadow: `0 0 10px ${theme.palette.primary.main}`,
+      transition: 'transform 0.3s ease',
+    },
+  })
+)
+
+export const ButtonContact = styled(Button)(({ theme }) => ({
+  // Utilisation de votre dégradé ContainedPrimary du thème sombre
+  background: theme.palette.mode === 'dark'
+    ? 'linear-gradient(135deg, #7ED7C1 0%, #4BA2AC 100%)'
+    : theme.palette.primary.main,
+  color: theme.palette.mode === 'dark' ? '#050505' : '#fff',
+  borderRadius: '12px',
+  padding: '8px 22px',
+  fontWeight: 700,
+  textTransform: 'none',
+  fontSize: '14px',
+  boxShadow: theme.palette.mode === 'dark' ? '0 4px 14px rgba(126, 215, 193, 0.2)' : 'none',
+  transition: 'all 0.3s ease',
+
+  '&:hover': {
+    transform: 'translateY(-2px)',
+    boxShadow: theme.palette.mode === 'dark'
+      ? '0 6px 20px rgba(126, 215, 193, 0.4)'
+      : `0 4px 12px ${theme.palette.primary.light}`,
+    background: theme.palette.mode === 'dark'
+      ? 'linear-gradient(135deg, #8FE7D1 0%, #5BB2BC 100%)'
+      : theme.palette.primary.dark,
+  },
+
+  [theme.breakpoints.down('md')]: {
+    display: 'none', // On cache le bouton texte sur mobile pour libérer de l'espace
   },
 }))

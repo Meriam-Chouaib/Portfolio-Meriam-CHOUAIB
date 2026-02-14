@@ -17,14 +17,10 @@ export const items: DrawerItem[] = [
     id: 'projects',
     icon: <FolderIcon />,
   },
-  {
-    txt: 'header.blog',
-    id: 'blogId',
-    icon: <ArticleIcon />,
-  },
+
   {
     txt: 'header.about',
-    id: 'aboutId',
+    id: 'aboutMeId',
     icon: <PersonIcon />,
   },
   {

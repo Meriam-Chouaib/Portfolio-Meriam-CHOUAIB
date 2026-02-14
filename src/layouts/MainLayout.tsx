@@ -5,9 +5,12 @@ import Header from 'layouts/Header/Header'
 import Footer from 'layouts/Footer/Footer'
 import { Container } from '@mui/material'
 
+import SEO from 'components/SEO/SEO'
+
 export default function MainLayout() {
   return (
     <Suspense fallback={<CircularProgress />}>
+      <SEO />
       <Header />
       <Outlet />
       <Footer />

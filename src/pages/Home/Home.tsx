@@ -17,12 +17,19 @@ import Contact from 'features/Contact/Contact'
 import Skills from 'features/Skills/Skills'
 import Experience from 'features/Experience/Experience'
 
+import SEO from 'components/SEO/SEO'
+
 function Home() {
   return (
     <BoxGlobal>
+      <SEO
+        title="Meriam Chouaib - Frontend Developer Portfolio"
+        description="Welcome to Meriam Chouaib's portfolio. Explore my web development projects, skills in React and TypeScript, and professional experience."
+        keywords="Meriam Chouaib, Frontend Developer, React Developer, Portfolio, Web Development, TypeScript"
+      />
       <Container maxWidth="xl">
         {/* Hero Section */}
-        <BoxStyled sx={{ minHeight: '90vh', display: 'flex', alignItems: 'center' }}>
+        <BoxStyled sx={{ minHeight: '90vh', display: 'flex', alignItems: 'center', paddingTop: '2rem' }} id='aboutMeId'>
           <GridStyled container spacing={4} alignItems="center">
             <Grid item xs={12} md={6}>
               <TextDescriptionDeveloper />

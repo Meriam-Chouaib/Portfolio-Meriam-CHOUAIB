@@ -20,20 +20,13 @@ import ToggleButton from 'components/ToggleButton/ToggleButton'
 import { DrawerItem } from 'layouts/Header/Header.type'
 import { scroller } from 'react-scroll'
 import { useState } from 'react'
+import { Box, Typography } from '@mui/material'
 
 function Header() {
   const { t } = useTranslation()
   const dispatch = useDispatch()
   const theme = useAppSelector((state) => state.appReducer.theme)
   const [activeSection, setActiveSection] = useState<string | null>(null)
-
-  const toggleTheme = () => {
-    const newTheme =
-      theme === AppThemes.LIGHT_MODE
-        ? AppThemes.DARK_MODE
-        : AppThemes.LIGHT_MODE
-    dispatch(changeTheme({ theme: newTheme }))
-  }
   const scrollToSection = (sectionId: string): void => {
     scroller.scrollTo(sectionId, {
       duration: 1000,
@@ -42,35 +35,52 @@ function Header() {
     })
     setActiveSection(sectionId)
   }
+  // Logic pour changer le thème (déjà correct dans votre code)
+  const toggleTheme = () => {
+    const newTheme = theme === AppThemes.LIGHT_MODE ? AppThemes.DARK_MODE : AppThemes.LIGHT_MODE
+    dispatch(changeTheme({ theme: newTheme }))
+  }
+
   return (
     <BoxHeader>
       <ContainerStyled maxWidth="xl">
-        <TemporaryDrawer />
+        {/* LOGO / BURGER MOBILE */}
+        <Box sx={{
+          display: {
+            xs: 'flex',   // Mobile
+            sm: 'flex',   // Tablette
+            md: 'none',   // Laptop (cache à partir d'ici)
+            lg: 'none',   // Large écran
+            xl: 'none'    // Très large écran
+          }, alignItems: 'center'
+        }}>
+          <TemporaryDrawer />
+          <Typography variant="h6" sx={{ fontWeight: 800, ml: { xs: 1, md: 0 }, color: 'primary.main', display: { xs: 'block', md: 'none' } }}>
+            MC
+          </Typography>
+        </Box>
 
+        {/* NAVIGATION DESKTOP */}
         <BoxMenu>
-          {itemsDrawer().map((item: DrawerItem, index: number) => (
-            <MenuItem
-              key={`item-header-${index}`}
-              onClick={() => scrollToSection(item.id)}
-            >
+          {itemsDrawer().map((item, index) => (
+            <MenuItem key={index} onClick={() => scrollToSection(item.id)}>
               <LinkHeader isactive={activeSection === item.id}>
                 {t(item.txt)}
               </LinkHeader>
             </MenuItem>
           ))}
-
-
         </BoxMenu>
-        <ToggleButton onChange={toggleTheme} />
 
-        <ButtonTraduction />
+        {/* ACTIONS DROITE */}
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 0.5, md: 2 } }}>
+          <ToggleButton onChange={toggleTheme} />
+          <ButtonTraduction />
 
-        <ButtonContact onClick={() => scrollToSection('contactId')}>
-          {t('header.contact_me')}
-        </ButtonContact>
+          <ButtonContact onClick={() => scrollToSection('contactId')}>
+            {t('header.contact_me')}
+          </ButtonContact>
+        </Box>
       </ContainerStyled>
     </BoxHeader>
   )
-}
-
-export default Header
+} export default Header
