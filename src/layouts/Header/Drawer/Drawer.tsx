@@ -16,6 +16,7 @@ import { itemsDrawer } from 'layouts/Header/Headers.constant'
 import { useTranslation } from 'react-i18next'
 import drawerIcon from 'assets/icons/icon-drawer.png'
 import { scroller } from 'react-scroll'
+import ButtonTraduction from 'layouts/Header/ButtonTraduction/ButtonTraduction'
 
 export default function TemporaryDrawer() {
   const [openDrawer, setOpenDrawer] = React.useState(false)
@@ -55,13 +56,15 @@ export default function TemporaryDrawer() {
           <ListItem key={item.txt} disablePadding sx={{ margin: '1rem 0rem' }}>
             <ListItemButton onClick={() => scrollToSection(item.id)}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {item.icon}
               </ListItemIcon>
               <ListItemTextStyled primary={t(item.txt)} />
             </ListItemButton>
           </ListItem>
         ))}
+
       </List>
+
     </BoxDrawer>
   )
 
@@ -73,6 +76,8 @@ export default function TemporaryDrawer() {
         </ButtonDrawer>
         <Drawer anchor={'left'} open={openDrawer} onClose={toggleDrawer(false)}>
           {list()}
+
+
         </Drawer>
       </React.Fragment>
     </>

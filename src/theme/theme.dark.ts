@@ -13,7 +13,7 @@ const paletteDark: ThemeOptions = {
     },
     secondary: {
       main: '#6db5a2', // Soft lavender accent (complements mint)
-      light: '#E5D9FF',
+      light: "#7ed7c1",
       dark: '#9C7BFF',
       contrastText: '#050505',
     },
@@ -119,7 +119,7 @@ const paletteDark: ThemeOptions = {
         },
         filledSecondary: {
           backgroundColor: 'rgba(208, 180, 255, 0.12)',
-          color: '#E5D9FF',
+          color: '#7ed7c1',
         },
       },
     },

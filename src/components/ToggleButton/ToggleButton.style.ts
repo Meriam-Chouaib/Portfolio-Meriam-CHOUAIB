@@ -2,7 +2,7 @@ import { styled } from '@mui/material/styles'
 import Switch from '@mui/material/Switch'
 
 export const ToggleSwitch = styled(Switch)(({ theme }) => ({
-  border: `2px solid ${theme.palette.secondary.main}`,
+  border: `2px solid #6db5a2`,
   borderRadius: '60px',
   height: '20px',
   width: '48px',
@@ -10,13 +10,13 @@ export const ToggleSwitch = styled(Switch)(({ theme }) => ({
   '& .MuiSwitch-switchBase': {
     padding: 0,
     margin: 0,
-    color: theme.palette.secondary.main,
+    color: '#6db5a2',
     transition: 'transform 0.3s ease-in-out',
     '&.Mui-checked': {
       transform: 'translateX(20px)',
-      color: theme.palette.secondary.main,
+      color: '#6db5a2',
       '& + .MuiSwitch-track': {
-        backgroundColor: theme.palette.secondary.main, // Checked background color
+        backgroundColor: '#6db5a2', // Checked background color
         opacity: 1,
         border: 'none',
       },
@@ -33,7 +33,7 @@ export const ToggleSwitch = styled(Switch)(({ theme }) => ({
   },
   '& .MuiSwitch-track': {
     borderRadius: 20, // Rounded track
-    backgroundColor: theme.palette.primary.main, // Default background color
+    backgroundColor: '#6db5a2', // Default background color
     opacity: 1,
     transition: theme.transitions.create(['background-color', 'border']),
   },

@@ -16,9 +16,12 @@ export const ButtonDrawer = styled(Button)(({ theme }) => ({
 }))
 export const LinkStyled = styled(Link)({
   textDecoration: 'none',
+  fontFamily: "Poppins",
+
 })
 export const ListItemTextStyled = styled(ListItemText)(({ theme }) => ({
   color: theme.palette.primary.main,
+  fontFamily: "Poppins",
   span: {
     fontWeight: 600,
     fontSize: '16px',

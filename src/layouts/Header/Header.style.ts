@@ -115,7 +115,7 @@ export const ButtonContact = styled(Button)(({ theme }) => ({
 
 export const TraductionForm = styled(FormControl)(({ theme }) => ({
   [theme.breakpoints.down(500)]: {
-    display: 'none',
+    //display: 'none',
   },
 }))
 export const MenuItem = styled('span')(({ theme }) => ({
