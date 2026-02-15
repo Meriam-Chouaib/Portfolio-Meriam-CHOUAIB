@@ -15,7 +15,7 @@ function ButtonTraduction() {
         labelId="demo-simple-select-standard-label"
         id="demo-simple-select-standard"
         onChange={handleChange}
-        defaultValue="en"
+        defaultValue="fr"
       >
         <MenuItem value="en">En</MenuItem>
         <MenuItem value="fr">Fr</MenuItem>
